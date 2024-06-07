@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <!-- <link rel="icon" type="image/x-icon" href="/public/favicon.ico"> -->
+    <title>App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+</head>
+<body>
+<div>
+    <button>Push</button>
+</div>
+<div style="overflow: auto; width: 800px; height: 1000px; border: 1px solid red">
+    <div
+            class="aii-cx-widget-root"
+            data-id="32267a10-a11f-475d-94f1-f4b73ff3ecd8"
+    ></div>
+</div>
+<script>
+
+    const button = document.querySelector('button')
+    button.onclick = () => {
+        document.dispatchEvent(new CustomEvent(`aii-cx-widget-32267a10-a11f-475d-94f1-f4b73ff3ecd8-open-modal`, {
+            detail: {someData: "someValue"},
+            bubbles: true, // позволяет событию всплывать по дереву DOM
+            composed: true // позволяет событию пересекать границу shadow DOM
+        }))
+    }
+</script>
+</body>
+</html>
