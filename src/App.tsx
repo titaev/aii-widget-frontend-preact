@@ -1,14 +1,17 @@
 import {useEffect} from "preact/compat";
-import {Styles} from "@src/style/Styles";
 import {getModel} from "@src/api/getModel";
-import {usePreviewEventsHandlers} from "@src/hooks/usePreviewEventsHandlers";
-import {$isErrorModel, $isLoadingModel, $isPreviewMode} from "@src/model";
-import {Main} from "@src/Main";
+import {$isErrorModel, $isLoadingModel, $isPreviewMode, $model} from "@src/model";
 import {incrementViewCount} from "@src/api/incrementViewCount";
 import {checkAndSetLsModel} from "@src/helpers/checkAndSetLsModel";
+import {ErrorNotification} from "@src/components/ErrorNotification";
+import {locale} from "@src/locale";
+import {MainLayout} from "@src/components/layouts/MainLayout";
+import {Loader} from "@src/components/Loader";
+import {PreviewLayout} from "@src/components/layouts/PreviewLayout";
+import {MiniPageLayout} from "@src/components/layouts/MiniPageLayout";
+import {PlainLayout} from "@src/components/layouts/PlainLayout";
 
-export const App = ({widgetId, isPreviewMode}: { widgetId: number, isPreviewMode: boolean }) => {
-
+export const App = ({widgetId, isPreviewMode}: { widgetId: string, isPreviewMode: boolean }) => {
 
     useEffect(() => {
         $isPreviewMode.value = isPreviewMode
@@ -19,14 +22,24 @@ export const App = ({widgetId, isPreviewMode}: { widgetId: number, isPreviewMode
         }
     }, []);
 
-    const {showLeadForm, showGratitude} = usePreviewEventsHandlers(isPreviewMode, widgetId)
-    if ($isErrorModel.value) {
-        return <div>Sorry.......</div>
+    if ($isLoadingModel.value) {
+        return <MainLayout>
+            <Loader/>
+        </MainLayout>
     }
-    return <>
-        <Styles/>
-        {$isLoadingModel.value ? <div>Is Loading...</div> : <Main/>}
-        {isPreviewMode && <div>Preview mode</div>}
-        {showLeadForm && <div>showLeadForm</div>}
-    </>
+    if ($isErrorModel.value) {
+        return <MainLayout>
+            <ErrorNotification text={locale.modelLoadErrorNotification}/>
+        </MainLayout>
+    }
+    if (isPreviewMode) {
+        return <MainLayout>
+            <PreviewLayout widgetId={widgetId}/>
+        </MainLayout>
+    }
+
+    return <MainLayout>
+        {$model.value.page_view === 'mini_page' && <MiniPageLayout/>}
+        {$model.value.page_view === 'plain_page' && <PlainLayout/>}
+    </MainLayout>
 };

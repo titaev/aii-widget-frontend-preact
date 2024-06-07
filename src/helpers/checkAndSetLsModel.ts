@@ -1,6 +1,6 @@
 import {$lsModel} from "@src/model";
 
-export const checkAndSetLsModel = (widgetId: number) => {
+export const checkAndSetLsModel = (widgetId: string) => {
     const LSModelString = localStorage.getItem(`aii-cx-widget-${widgetId}`)
     if (LSModelString) {
         $lsModel.value = JSON.parse(LSModelString)

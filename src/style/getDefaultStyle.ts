@@ -1,16 +1,17 @@
 import {
-  AD_SHOW_CLASS,
-  ANSWER_CONTAINER_CLASS,
-  DISABLED_CLASS,
-  FORM_CONTAINER_CLASS,
-  GRATITUDE_CLASS,
-  HEADER_TITLE_CLASS,
-  IMAGE_FIELD_CLASS,
-  MINI_PAGE_CLASS,
-  MINI_PAGE_WRAPPER_CLASS,
-  PAGE_CONTAINER_CLASS,
-  WIDGET_CONTAINER_CLASS,
-  WIDGET_TITLE_CLASS,
+    AD_SHOW_CLASS,
+    ANSWER_CONTAINER_CLASS,
+    DISABLED_CLASS,
+    ERROR_NOTIFICATION_CLASS,
+    FORM_CONTAINER_CLASS,
+    GRATITUDE_CLASS,
+    HEADER_TITLE_CLASS,
+    IMAGE_FIELD_CLASS,
+    MINI_PAGE_CLASS,
+    MINI_PAGE_WRAPPER_CLASS,
+    PAGE_CONTAINER_CLASS,
+    WIDGET_CONTAINER_CLASS,
+    WIDGET_TITLE_CLASS,
 } from '@src/classNames'
 import {calculateTextOnPrimaryColor} from '@src/helpers/calculateTextOnPrimaryColor'
 import {answerStyles} from '@src/style/answerStyles'
@@ -191,6 +192,20 @@ opacity: 1;
 .${IMAGE_FIELD_CLASS}{
 display: flex;
 margin-bottom: 20px;
+}
+.${ERROR_NOTIFICATION_CLASS}{
+position: absolute;
+top:0;
+right:0;
+bottom:0;
+left:0;
+display: flex;
+align-items: center;
+justify-content: center;
+background-color: var(--base-error);
+color: var(--base-light);
+opacity: 0.7;
+height: 100%;
 }
 
 @container (max-width: 700px) {

@@ -46,3 +46,5 @@ export const RESET_BUTTON_CLASS = 'reset-btn'
 export const COPY_BUTTON_CLASS = 'copy-btn'
 
 export const COPIED_CLASS = 'copied'
+export const ERROR_NOTIFICATION_CLASS = 'error-notification'
+export const LOADER_CLASS = 'loader'

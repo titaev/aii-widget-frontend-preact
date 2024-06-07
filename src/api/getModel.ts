@@ -1,7 +1,6 @@
 import {$isErrorModel, $isLoadingModel, $model} from "@src/model";
 
-export const getModel = (widgetId: number) => {
-    console.log(process.env.REACT_APP_BE_API_URL)
+export const getModel = (widgetId: string) => {
     $isLoadingModel.value = true
     $isErrorModel.value = false
     fetch(
