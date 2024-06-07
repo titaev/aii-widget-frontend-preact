@@ -17,14 +17,15 @@
     <div
             class="aii-cx-widget-root"
             data-id="32267a10-a11f-475d-94f1-f4b73ff3ecd8"
+            data-mode=""
     ></div>
 </div>
 <script>
 
     const button = document.querySelector('button')
     button.onclick = () => {
-        document.dispatchEvent(new CustomEvent(`aii-cx-widget-32267a10-a11f-475d-94f1-f4b73ff3ecd8-open-modal`, {
-            detail: {someData: "someValue"},
+        document.dispatchEvent(new CustomEvent(`aii-cx-widget-32267a10-a11f-475d-94f1-f4b73ff3ecd8-show-lead-form`, {
+            detail: {isOpened: true},
             bubbles: true, // позволяет событию всплывать по дереву DOM
             composed: true // позволяет событию пересекать границу shadow DOM
         }))

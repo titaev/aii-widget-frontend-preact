@@ -1,20 +1,32 @@
-import {useEffect, useState} from "preact/compat";
+import {useEffect} from "preact/compat";
 import {Styles} from "@src/style/Styles";
+import {getModel} from "@src/api/getModel";
+import {usePreviewEventsHandlers} from "@src/hooks/usePreviewEventsHandlers";
+import {$isErrorModel, $isLoadingModel, $isPreviewMode} from "@src/model";
+import {Main} from "@src/Main";
+import {incrementViewCount} from "@src/api/incrementViewCount";
+import {checkAndSetLsModel} from "@src/helpers/checkAndSetLsModel";
 
-export const App = ({widgetId}: { widgetId: number }) => {
-    const [modalIsOpen, setModalIsOpen] = useState(false)
+export const App = ({widgetId, isPreviewMode}: { widgetId: number, isPreviewMode: boolean }) => {
+
+
     useEffect(() => {
-        const handleModalIsOpen = () => {
-            setModalIsOpen(true)
+        $isPreviewMode.value = isPreviewMode
+        if (!isPreviewMode) {
+            checkAndSetLsModel(widgetId)
+            incrementViewCount(widgetId) //TODO сделать intersection observer
+            getModel(widgetId)
         }
-        document.addEventListener(`aii-cx-widget-${widgetId}-open-modal`, handleModalIsOpen)
-        return () => {
-            document.removeEventListener(`aii-cx-widget-${widgetId}-open-modal`, handleModalIsOpen)
-        }
-    }, [])
+    }, []);
+
+    const {showLeadForm, showGratitude} = usePreviewEventsHandlers(isPreviewMode, widgetId)
+    if ($isErrorModel.value) {
+        return <div>Sorry.......</div>
+    }
     return <>
         <Styles/>
-        <h1>{widgetId}</h1>
-        {modalIsOpen && <div>Modal Is Open</div>}
+        {$isLoadingModel.value ? <div>Is Loading...</div> : <Main/>}
+        {isPreviewMode && <div>Preview mode</div>}
+        {showLeadForm && <div>showLeadForm</div>}
     </>
 };

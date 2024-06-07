@@ -3,18 +3,11 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
-const dotenv = require('dotenv');
 
 const production = process.env.NODE_ENV === 'production';
 const port = 3004;
 
 module.exports = () => {
-    const env = dotenv?.config()?.parsed || {};
-    const envKeys = Object.keys(env).reduce((prev, next) => {
-        // eslint-disable-next-line no-param-reassign
-        prev[next] = JSON.stringify(env[next]);
-        return prev;
-    }, {});
     return {
         entry: {myAppName: path.resolve(__dirname, './src/index.tsx')},
         output: {
@@ -101,15 +94,19 @@ module.exports = () => {
                 filename: production ? '[name].[contenthash].css' : '[name].css',
             }),
             new webpack.DefinePlugin({
-                process: {
-                    env: envKeys,
-                },
+                'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
+                'process.env.REACT_APP_BE_API_URL': JSON.stringify(
+                    process.env.REACT_APP_BE_API_URL
+                ),
+                'process.env.REACT_APP_FORM_SOCKET_URL': JSON.stringify(
+                    process.env.REACT_APP_FORM_SOCKET_URL
+                ),
+                'process.env.APP_URL': JSON.stringify(process.env.APP_URL),
             }),
         ],
         devServer: {
             port,
             hot: true,
-            open: true,
             historyApiFallback: true,
             https: false,
         },
