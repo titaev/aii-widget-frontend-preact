@@ -1,4 +1,4 @@
-import { MODAL_OVERLAY_CLASS, MODAL_WRAPPER_CLASS } from '@src/classNames'
+import {MODAL_OVERLAY_CLASS, MODAL_WRAPPER_CLASS} from '@src/classNames'
 
 export const modalStyles = `
 .${MODAL_OVERLAY_CLASS}{
@@ -8,7 +8,6 @@ left: 0;
 width: 100%;
 height: 100%;
 background-color: var(--modal-overlay);
-display: none;
 z-index: 2;
 }
 .${MODAL_WRAPPER_CLASS}{

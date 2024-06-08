@@ -1,5 +1,5 @@
 import {Signal, signal} from "@preact/signals";
-import {ModelResponse} from "@src/types";
+import {ModalContent, ModelResponse} from "@src/types";
 
 export const $model: Signal<ModelResponse | null> = signal(null);
 export const $isLoadingModel = signal(true)
@@ -11,4 +11,6 @@ export const $lsModel = signal(null)
 
 export const $isShowLeadForm = signal(false)
 export const $isShowGratitude = signal(false)
+
+export const $modalContent: Signal<ModalContent> = signal('')
 

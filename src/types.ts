@@ -142,3 +142,5 @@ export type LSModel = {
     fillingId: string | null
     leadIsCollected: boolean
 }
+
+export type ModalContent = '' | 'leadForm' | 'gratitude'
