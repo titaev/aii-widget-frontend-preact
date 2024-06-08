@@ -2,6 +2,8 @@ import {useEffect} from "preact/compat";
 import {$modalContent, $model} from "@src/model";
 import {MiniPageLayout} from "@src/components/layouts/MiniPageLayout";
 import {PlainLayout} from "@src/components/layouts/PlainLayout";
+import {LeadForm} from "@src/components/sections/LeadForm";
+import {Gratitude} from "@src/components/sections/Gratitude";
 
 export const PreviewLayout = ({widgetId}: { widgetId: string }) => {
     useEffect(() => {
@@ -23,7 +25,12 @@ export const PreviewLayout = ({widgetId}: { widgetId: string }) => {
             document.removeEventListener(`aii-cx-widget-${widgetId}-set-model-data`, handleModelData)
         }
     }, [])
-
+    if ($modalContent.value === 'leadForm') {
+        return <LeadForm/>
+    }
+    if ($modalContent.value === 'gratitude') {
+        return <Gratitude/>
+    }
     if ($model?.value?.page_view === 'mini_page') {
         return <MiniPageLayout/>
     }

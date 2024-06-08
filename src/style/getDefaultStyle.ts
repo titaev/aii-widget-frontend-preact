@@ -7,6 +7,7 @@ import {
     GRATITUDE_CLASS,
     HEADER_TITLE_CLASS,
     IMAGE_FIELD_CLASS,
+    LOADER_CLASS,
     MINI_PAGE_CLASS,
     MINI_PAGE_WRAPPER_CLASS,
     PAGE_CONTAINER_CLASS,
@@ -131,7 +132,6 @@ ${answerStyles}
 ${buttonsStyles}
 .${HEADER_TITLE_CLASS}{
 margin-bottom: 20px;
-
 }
 .${WIDGET_CONTAINER_CLASS}{
 margin: 0 auto;
@@ -207,6 +207,26 @@ color: var(--base-light);
 opacity: 0.7;
 height: 100%;
 }
+.${LOADER_CLASS}{
+position:absolute;
+background-color: light-gray;
+top:0;
+right:0;
+bottom:0;
+left:0;
+}
+.${LOADER_CLASS}:after{
+content:'';
+position:absolute;
+background: linear-gradient(90deg,transparent,gray,transparent);
+animation-name: ping-pong;
+animation-duration: 4s;
+animation-direction: alternate;
+animation-iteration-count: infinite;
+height: 100%;
+width: 50%;
+opacity: 0.5;
+}
 
 @container (max-width: 700px) {
 .${WIDGET_TITLE_CLASS}{
@@ -233,6 +253,14 @@ width: 100%;
   to {
     transform: translateY(0) scale(1);
     opacity: 1;
+  }
+}
+@keyframes ping-pong {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(100%);
   }
 }
   `

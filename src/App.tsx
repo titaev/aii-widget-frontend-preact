@@ -22,6 +22,12 @@ export const App = ({widgetId, isPreviewMode}: { widgetId: string, isPreviewMode
         }
     }, []);
 
+    if (isPreviewMode) {
+        return <MainLayout>
+            <PreviewLayout widgetId={widgetId}/>
+        </MainLayout>
+    }
+
     if ($isLoadingModel.value) {
         return <MainLayout>
             <Loader/>
@@ -30,11 +36,6 @@ export const App = ({widgetId, isPreviewMode}: { widgetId: string, isPreviewMode
     if ($isErrorModel.value) {
         return <MainLayout>
             <ErrorNotification text={locale.modelLoadErrorNotification}/>
-        </MainLayout>
-    }
-    if (isPreviewMode) {
-        return <MainLayout>
-            <PreviewLayout widgetId={widgetId}/>
         </MainLayout>
     }
 

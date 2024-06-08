@@ -20,7 +20,7 @@ export const ANSWER_CLASS = 'answer'
 export const ANSWER_HIDDEN_CLASS = 'answer-hidden'
 export const ANSWER_BUTTONS_WRAPPER_CLASS = 'answer-buttons-wrapper'
 
-export const BUTTON_WRAPPER_CLASS = 'generate-button-wrapper'
+export const GENERATE_BUTTON_WRAPPER_CLASS = 'generate-button-wrapper'
 
 export const ERROR_CLASS = 'error'
 

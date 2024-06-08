@@ -4,7 +4,7 @@ export type CollectLeadStrategy =
     | 'email_ai_answer'
 export type PageViewMode = 'mini_page' | 'plain_page'
 
-export type TextInputField = {
+export type TextInputFieldType = {
     type: 'TextInputField'
     title: string
     value: string
@@ -14,15 +14,14 @@ export type TextInputField = {
     enabled?: boolean
 }
 
-export type HTMLField = {
+export type HTMLFieldType = {
     type: 'HtmlField'
     markup: string
     fieldRef: string
 }
 
-export type ImageField = {
+export type ImageFieldType = {
     type: 'ImageField'
-    markup: string
     fieldRef: string
     maxHeight: string
     align: 'stretch' | 'start' | 'center' | 'end'
@@ -33,7 +32,7 @@ export type ImageField = {
     }
 }
 
-export type HeaderField = {
+export type HeaderFieldType = {
     type: 'HeaderField'
     size: string
     title: string
@@ -52,11 +51,11 @@ export type ModelResponse = {
     name: string
     fields: {
         version: string
-        aiFields: Array<TextInputField | HeaderField | HTMLField | ImageField>
+        aiFields: Array<TextInputFieldType | HeaderFieldType | HTMLFieldType | ImageFieldType>
         aiPrompt: string
         runAiBtn: ButtonField
         enableLeads: boolean
-        leadsFields: Array<TextInputField | HeaderField>
+        leadsFields: Array<TextInputFieldType | HeaderFieldType>
         submitFormBtn: ButtonField
         formCssOverrides: string
         enableGenerateMoreBtn: boolean
