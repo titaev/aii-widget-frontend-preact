@@ -1,31 +1,32 @@
+/* eslint-disable max-len */
 import {
-    AD_SHOW_CLASS,
-    ANSWER_CONTAINER_CLASS,
-    DISABLED_CLASS,
-    ERROR_NOTIFICATION_CLASS,
-    FORM_CONTAINER_CLASS,
-    GRATITUDE_CLASS,
-    HEADER_TITLE_CLASS,
-    IMAGE_FIELD_CLASS,
-    LOADER_CLASS,
-    MINI_PAGE_CLASS,
-    MINI_PAGE_WRAPPER_CLASS,
-    PAGE_CONTAINER_CLASS,
-    WIDGET_CONTAINER_CLASS,
-    WIDGET_TITLE_CLASS,
-} from '@src/classNames'
-import {calculateTextOnPrimaryColor} from '@src/helpers/calculateTextOnPrimaryColor'
-import {answerStyles} from '@src/style/answerStyles'
-import {buttonsStyles} from '@src/style/buttonsStyles'
-import {formStyles} from '@src/style/formStyles'
-import {inputStyles} from '@src/style/inputStyles'
-import {modalStyles} from '@src/style/modalStyles'
-import {ModelResponse} from '@src/types'
+  AD_SHOW_CLASS,
+  ANSWER_CONTAINER_CLASS,
+  DISABLED_CLASS,
+  ERROR_NOTIFICATION_CLASS,
+  FORM_CONTAINER_CLASS,
+  GRATITUDE_CLASS,
+  HEADER_TITLE_CLASS,
+  IMAGE_FIELD_CLASS,
+  LOADER_CLASS,
+  MINI_PAGE_CLASS,
+  MINI_PAGE_WRAPPER_CLASS,
+  PAGE_CONTAINER_CLASS,
+  WIDGET_CONTAINER_CLASS,
+  WIDGET_TITLE_CLASS,
+} from '@src/classNames';
+import { calculateTextOnPrimaryColor } from '@src/helpers/calculateTextOnPrimaryColor';
+import { answerStyles } from '@src/style/answerStyles';
+import { buttonsStyles } from '@src/style/buttonsStyles';
+import { formStyles } from '@src/style/formStyles';
+import { inputStyles } from '@src/style/inputStyles';
+import { modalStyles } from '@src/style/modalStyles';
+import { ModelResponse } from '@src/types';
 
 export const getDefaultStyle = function (model: ModelResponse) {
-    const hue = model?.preferences?.primaryColor?.hsl?.h ?? 177
+  const hue = model?.preferences?.primaryColor?.hsl?.h ?? 177;
 
-    return `
+  return `
 :host{all: initial !important; height: 100% !important; overflow: auto !important;}
 * {
 margin: 0;
@@ -73,12 +74,8 @@ font-size: 16px;
 .${PAGE_CONTAINER_CLASS}{
 --hue: ${hue};
 --shadow: 1px 1px 10px hsla(var(--hue), 100%, 5%, 0.2);
---primary:  ${
-        model?.preferences?.primaryColor?.hex || 'hsla(var(--hue), 100%, 21%, 1)'
-    };
---inverted-lightness-primary: ${calculateTextOnPrimaryColor(
-        model?.preferences?.primaryColor?.hex
-    )};
+--primary:  ${model?.preferences?.primaryColor?.hex || 'hsla(var(--hue), 100%, 21%, 1)'};
+--inverted-lightness-primary: ${calculateTextOnPrimaryColor(model?.preferences?.primaryColor?.hex)};
 --base-error: red;
 --base-light: hsla(var(--hue), 100%, 99%, 1);
 --base-text: hsla(var(--hue), 100%, 5%, 1);
@@ -113,12 +110,12 @@ font-size: 16px;
 
 position: relative;
 background: ${
-        model?.preferences?.isBgTransparent
-            ? 'transparent'
-            : model?.preferences?.bgColor?.hex
-                ? model?.preferences?.bgColor.hex
-                : 'var(--main-bg-gradient)'
-    } ;
+    model?.preferences?.isBgTransparent
+      ? 'transparent'
+      : model?.preferences?.bgColor?.hex
+        ? model?.preferences?.bgColor.hex
+        : 'var(--main-bg-gradient)'
+  } ;
 color: var(--base-text);
 padding: 5px;
 font-family:${model?.preferences?.bodyFont || 'Montserrat'}, sans-serif;
@@ -263,5 +260,5 @@ width: 100%;
     transform: translateX(100%);
   }
 }
-  `
-}
+  `;
+};

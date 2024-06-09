@@ -1,46 +1,53 @@
-import {useEffect} from "preact/compat";
-import {getModel} from "@src/api/getModel";
-import {$isErrorModel, $isLoadingModel, $isPreviewMode, $model} from "@src/model";
-import {incrementViewCount} from "@src/api/incrementViewCount";
-import {checkAndSetLsModel} from "@src/helpers/checkAndSetLsModel";
-import {ErrorNotification} from "@src/components/ErrorNotification";
-import {locale} from "@src/locale";
-import {MainLayout} from "@src/components/layouts/MainLayout";
-import {Loader} from "@src/components/Loader";
-import {PreviewLayout} from "@src/components/layouts/PreviewLayout";
-import {MiniPageLayout} from "@src/components/layouts/MiniPageLayout";
-import {PlainLayout} from "@src/components/layouts/PlainLayout";
+import { useEffect } from 'preact/compat';
+import { getModel } from '@src/api/getModel';
+import { $isErrorModel, $isLoadingModel, $isPreviewMode, $model } from '@src/model';
+import { incrementViewCount } from '@src/api/incrementViewCount';
+import { checkAndSetLsModel } from '@src/helpers/checkAndSetLsModel';
+import { ErrorNotification } from '@src/components/ErrorNotification';
+import { locale } from '@src/locale';
+import { MainLayout } from '@src/components/layouts/MainLayout';
+import { Loader } from '@src/components/Loader';
+import { PreviewLayout } from '@src/components/layouts/PreviewLayout';
+import { MiniPageLayout } from '@src/components/layouts/MiniPageLayout';
+import { PlainLayout } from '@src/components/layouts/PlainLayout';
 
-export const App = ({widgetId, isPreviewMode}: { widgetId: string, isPreviewMode: boolean }) => {
-
-    useEffect(() => {
-        $isPreviewMode.value = isPreviewMode
-        if (!isPreviewMode) {
-            checkAndSetLsModel(widgetId)
-            incrementViewCount(widgetId) //TODO сделать intersection observer
-            getModel(widgetId)
-        }
-    }, []);
-
-    if (isPreviewMode) {
-        return <MainLayout>
-            <PreviewLayout widgetId={widgetId}/>
-        </MainLayout>
+export const App = ({ widgetId, isPreviewMode }: { widgetId: string; isPreviewMode: boolean }) => {
+  useEffect(() => {
+    $isPreviewMode.value = isPreviewMode;
+    if (!isPreviewMode) {
+      checkAndSetLsModel(widgetId);
+      incrementViewCount(widgetId); //TODO сделать intersection observer
+      getModel(widgetId);
     }
+  }, []);
 
-    if ($isLoadingModel.value) {
-        return <MainLayout>
-            <Loader/>
-        </MainLayout>
-    }
-    if ($isErrorModel.value) {
-        return <MainLayout>
-            <ErrorNotification text={locale.modelLoadErrorNotification}/>
-        </MainLayout>
-    }
+  if (isPreviewMode) {
+    return (
+      <MainLayout>
+        <PreviewLayout widgetId={widgetId} />
+      </MainLayout>
+    );
+  }
 
-    return <MainLayout>
-        {$model.value.page_view === 'mini_page' && <MiniPageLayout/>}
-        {$model.value.page_view === 'plain_page' && <PlainLayout/>}
+  if ($isLoadingModel.value) {
+    return (
+      <MainLayout>
+        <Loader />
+      </MainLayout>
+    );
+  }
+  if ($isErrorModel.value) {
+    return (
+      <MainLayout>
+        <ErrorNotification text={locale.modelLoadErrorNotification} />
+      </MainLayout>
+    );
+  }
+
+  return (
+    <MainLayout>
+      {$model.value.page_view === 'mini_page' && <MiniPageLayout />}
+      {$model.value.page_view === 'plain_page' && <PlainLayout />}
     </MainLayout>
+  );
 };

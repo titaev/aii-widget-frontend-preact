@@ -5,7 +5,7 @@ import {
   ANSWER_HIDDEN_CLASS,
   ANSWER_WRAPPER_CLASS,
   MINI_PAGE_CLASS,
-} from '@src/classNames'
+} from '@src/classNames';
 
 export const answerStyles = `
 .${ANSWER_CONTAINER_CLASS}{
@@ -74,4 +74,4 @@ border: 1px solid var(--inverted-lightness-primary);
 color: var(--inverted-lightness-primary);
 background-color: var(--primary);
 }
-`
+`;

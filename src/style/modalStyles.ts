@@ -1,4 +1,4 @@
-import {MODAL_OVERLAY_CLASS, MODAL_WRAPPER_CLASS} from '@src/classNames'
+import { MODAL_OVERLAY_CLASS, MODAL_WRAPPER_CLASS } from '@src/classNames';
 
 export const modalStyles = `
 .${MODAL_OVERLAY_CLASS}{
@@ -18,4 +18,4 @@ overflow-y: auto;
 margin: auto;
 animation: appear 300ms 1 ease-in 0s forwards;
 }
-`
+`;

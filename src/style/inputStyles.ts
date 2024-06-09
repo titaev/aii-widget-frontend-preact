@@ -4,7 +4,7 @@ import {
   TEXT_INPUT_DESCRIPTION_CLASS,
   TEXT_INPUT_TITLE_CLASS,
   TEXT_INPUT_WRAPPER_CLASS,
-} from '@src/classNames'
+} from '@src/classNames';
 
 export const inputStyles = `
 .${TEXT_INPUT_WRAPPER_CLASS}{
@@ -75,4 +75,4 @@ font-size: 12px;
 color: var(--input-description);
 margin-top: 7px;
 }
-`
+`;

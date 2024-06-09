@@ -6,7 +6,7 @@ import {
   MORE_BUTTON_CLASS,
   RESET_BUTTON_CLASS,
   STOP_BUTTON_CLASS,
-} from '@src/classNames'
+} from '@src/classNames';
 
 export const buttonsStyles = `
 .${GENERATE_BUTTON_WRAPPER_CLASS}{
@@ -137,4 +137,4 @@ transform: translate(-200%, -40%) rotate(-45deg);
 width: 0;
 transform: translate(20%, -50%) rotate(45deg);
 }
-`
+`;

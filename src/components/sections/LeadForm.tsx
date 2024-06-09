@@ -1,3 +1,3 @@
 export const LeadForm = () => {
-    return <div>LeadForm</div>
-}
+  return <div>LeadForm</div>;
+};

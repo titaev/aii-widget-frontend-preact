@@ -1,5 +1,5 @@
-import {LOADER_CLASS} from "@src/classNames";
+import { LOADER_CLASS } from '@src/classNames';
 
 export const Loader = () => {
-    return <div className={LOADER_CLASS}/>
-}
+  return <div className={LOADER_CLASS} />;
+};

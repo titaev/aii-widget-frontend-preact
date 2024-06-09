@@ -1,8 +1,4 @@
-import {
-  FORM_CONTAINER_CLASS,
-  MINI_PAGE_CLASS,
-  MODAL_FORM_WRAPPER_CLASS,
-} from '@src/classNames'
+import { FORM_CONTAINER_CLASS, MINI_PAGE_CLASS, MODAL_FORM_WRAPPER_CLASS } from '@src/classNames';
 
 export const formStyles = `
 .${MODAL_FORM_WRAPPER_CLASS}{
@@ -25,4 +21,4 @@ justify-content: flex-start;
 .${FORM_CONTAINER_CLASS}.${MINI_PAGE_CLASS}{
 width: 44%;
 }
-`
+`;
