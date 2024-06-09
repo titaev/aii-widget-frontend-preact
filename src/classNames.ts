@@ -9,6 +9,8 @@ export const TEXT_INPUT_TITLE_CLASS = 'text-input-title';
 export const TEXT_INPUT_WRAPPER_CLASS = 'text-input-wrapper';
 export const TEXT_INPUT_DESCRIPTION_CLASS = 'text-input-description';
 
+export const INPUT_ERROR_CLASS = 'input-error';
+
 export const IMAGE_FIELD_CLASS = 'image-field';
 
 export const MODAL_OVERLAY_CLASS = 'modal-overlay';

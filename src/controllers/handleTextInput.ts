@@ -1,5 +1,6 @@
-import { $model } from '@src/model';
+import { $isFirstValidationAiForm, $isFirstValidationLeadForm, $model } from '@src/model';
 import { FieldFrom } from '@src/types';
+import { checkFields } from '@src/helpers/checkFields';
 
 export const handleTextInput = ({
   value,
@@ -20,4 +21,11 @@ export const handleTextInput = ({
   }
   ref.style.height = '5px';
   ref.style.height = ref.scrollHeight + 'px';
+
+  if (
+    (!$isFirstValidationAiForm.value && fieldFrom === 'aiFields') ||
+    (!$isFirstValidationLeadForm.value && fieldFrom === 'leadsFields')
+  ) {
+    checkFields(fieldFrom);
+  }
 };

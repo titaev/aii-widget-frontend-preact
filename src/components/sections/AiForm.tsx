@@ -7,9 +7,6 @@ import { handleAiSubmit } from '@src/controllers/handleAiSubmit';
 
 export const AiForm = () => {
   const isMiniPage = $model.value.page_view === 'mini_page';
-  $model.value.fields.aiFields = $model.value.fields.aiFields.map(item => {
-    return item.type === 'TextInputField' ? { ...item, errorText: '' } : item;
-  });
 
   return (
     <div className={`${FORM_CONTAINER_CLASS} ${isMiniPage ? MINI_PAGE_CLASS : ''}`}>

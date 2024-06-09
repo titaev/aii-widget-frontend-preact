@@ -1,5 +1,6 @@
 import {
   ERROR_CLASS,
+  INPUT_ERROR_CLASS,
   TEXT_INPUT_CLASS,
   TEXT_INPUT_DESCRIPTION_CLASS,
   TEXT_INPUT_TITLE_CLASS,
@@ -61,10 +62,7 @@ background-color: var(--input-error-bg-hover);
 .${TEXT_INPUT_CLASS}.${ERROR_CLASS}:focus{
 box-shadow: inset 0px -2px var(--base-error);
 }
-.${TEXT_INPUT_CLASS} + div{
-display: none;
-}
-.${TEXT_INPUT_CLASS}.${ERROR_CLASS} + div{
+.${INPUT_ERROR_CLASS}{
 display: block;
 margin-top: 5px;
 color: var(--base-error);

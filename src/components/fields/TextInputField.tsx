@@ -1,6 +1,7 @@
 import { FieldFrom, TextInputFieldType } from '@src/types';
 import {
   ERROR_CLASS,
+  INPUT_ERROR_CLASS,
   TEXT_INPUT_CLASS,
   TEXT_INPUT_DESCRIPTION_CLASS,
   TEXT_INPUT_TITLE_CLASS,
@@ -40,8 +41,8 @@ export const TextInputField = ({
         value={fieldData.value}
         required={fieldData.required}
       />
-      {!!fieldData.errorText && <div>{fieldData.errorText}</div>}
-      {!!fieldData.description && (
+      {!!fieldData.errorText && <div className={INPUT_ERROR_CLASS}>{fieldData.errorText}</div>}
+      {!!fieldData.description && !fieldData.errorText && (
         <div className={TEXT_INPUT_DESCRIPTION_CLASS}>{fieldData.description}</div>
       )}
     </div>

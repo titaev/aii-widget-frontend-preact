@@ -4,7 +4,7 @@ import { $model } from '@src/model';
 export const SendButton = () => {
   return (
     <div className={GENERATE_BUTTON_WRAPPER_CLASS}>
-      <button className={`${BUTTON_CLASS} ${SEND_BUTTON_CLASS}`}>
+      <button type='submit' className={`${BUTTON_CLASS} ${SEND_BUTTON_CLASS}`}>
         {$model.value.fields.submitFormBtn.title || ''}
       </button>
     </div>

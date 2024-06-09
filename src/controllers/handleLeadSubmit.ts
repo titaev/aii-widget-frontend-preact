@@ -1,1 +1,3 @@
-export const handleLeadSubmit = () => {};
+export const handleLeadSubmit = (e: SubmitEvent) => {
+  e.preventDefault();
+};

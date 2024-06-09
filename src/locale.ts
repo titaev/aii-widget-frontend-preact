@@ -5,6 +5,8 @@ const localeTexts = {
     more: 'Ещё',
     stop: 'Стоп',
     modelLoadErrorNotification: 'Ошибка. Попробуйте позднее',
+    requiredError: 'Обязательное поле',
+    incorrectEmail: 'Некорректный адрес почты',
   },
   en: {
     copy: 'Copy',
@@ -12,6 +14,8 @@ const localeTexts = {
     more: 'More',
     stop: 'Stop',
     modelLoadErrorNotification: 'Error. Try later',
+    requiredError: 'The field is required',
+    incorrectEmail: 'Incorrect email',
   },
 };
 export const locale =
