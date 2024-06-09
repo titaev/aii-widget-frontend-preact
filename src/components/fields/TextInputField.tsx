@@ -7,19 +7,16 @@ import {
   TEXT_INPUT_WRAPPER_CLASS,
 } from '@src/classNames';
 import { useRef } from 'preact/compat';
-import { $model } from '@src/model';
+import { handleTextInput } from '@src/controllers/handleTextInput';
 
 export const TextInputField = ({ fieldData }: { fieldData: TextInputFieldType }) => {
   const inputRef = useRef(null);
   const handleInput = (e: any) => {
-    const input = $model.value.fields.aiFields.find(item => {
-      return item.type === 'TextInputField' && item.fieldRef === fieldData.fieldRef;
+    handleTextInput({
+      value: e.target.value,
+      fieldRef: fieldData.fieldRef,
+      ref: inputRef.current,
     });
-    if (input.type === 'TextInputField') {
-      input.value = e.target.value;
-    }
-    inputRef.current.style.height = '5px';
-    inputRef.current.style.height = inputRef.current.scrollHeight + 'px';
   };
 
   return (

@@ -24,7 +24,7 @@ export const PreviewLayout = ({ widgetId }: { widgetId: string }) => {
       document.removeEventListener(`aii-cx-widget-${widgetId}-show-gratitude`, handleGratitude);
       document.removeEventListener(`aii-cx-widget-${widgetId}-set-model-data`, handleModelData);
     };
-  }, []);
+  }, [widgetId]);
   if ($modalContent.value === 'leadForm') {
     return <LeadForm />;
   }
