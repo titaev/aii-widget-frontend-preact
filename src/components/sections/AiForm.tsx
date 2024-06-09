@@ -3,20 +3,21 @@ import { $model } from '@src/model';
 import { Ad } from '@src/components/Ad';
 import { GenerateButton } from '@src/components/GenerateButton';
 import { typeFieldMap } from '@src/typeFieldMap';
+import { handleAiSubmit } from '@src/controllers/handleAiSubmit';
 
 export const AiForm = () => {
   const isMiniPage = $model.value.page_view === 'mini_page';
   $model.value.fields.aiFields = $model.value.fields.aiFields.map(item => {
     return item.type === 'TextInputField' ? { ...item, errorText: '' } : item;
   });
-  console.log($model.value);
+
   return (
     <div className={`${FORM_CONTAINER_CLASS} ${isMiniPage ? MINI_PAGE_CLASS : ''}`}>
-      <form noValidate={true}>
-        {$model.value.fields.aiFields.map(item => {
+      <form noValidate={true} onSubmit={handleAiSubmit}>
+        {$model.value.fields.aiFields.map((item, index) => {
           const Field = typeFieldMap[item.type];
           // @ts-ignore
-          return <Field fieldData={item} />;
+          return <Field key={index} fieldData={item} fieldFrom={'aiFields'} />;
         })}
         <GenerateButton />
         <Ad />

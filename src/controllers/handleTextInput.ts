@@ -1,21 +1,23 @@
 import { $model } from '@src/model';
-import { RefObject } from 'preact';
+import { FieldFrom } from '@src/types';
 
 export const handleTextInput = ({
   value,
   ref,
   fieldRef,
+  fieldFrom,
 }: {
   value: string;
-  ref: RefObject<HTMLInputElement>;
+  ref: HTMLInputElement;
   fieldRef: string;
+  fieldFrom: FieldFrom;
 }) => {
-  const input = $model.value.fields.aiFields.find(item => {
+  const input = $model.value.fields[fieldFrom].find(item => {
     return item.type === 'TextInputField' && item.fieldRef === fieldRef;
   });
   if (input.type === 'TextInputField') {
     input.value = value;
   }
-  ref.current.style.height = '5px';
-  ref.current.style.height = ref.current.scrollHeight + 'px';
+  ref.style.height = '5px';
+  ref.style.height = ref.scrollHeight + 'px';
 };

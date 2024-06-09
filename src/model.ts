@@ -1,5 +1,5 @@
 import { Signal, signal } from '@preact/signals';
-import { ModalContent, ModelResponse } from '@src/types';
+import { ModalContent, ModelResponse, PlainContent } from '@src/types';
 
 export const $model: Signal<ModelResponse | null> = signal(null);
 export const $isLoadingModel = signal(true);
@@ -20,3 +20,7 @@ export const $isShowGenerateMoreBtn = signal(false);
 
 export const $isShowStopBtn = signal(false);
 export const $modalContent: Signal<ModalContent> = signal('');
+export const $plainContent: Signal<PlainContent> = signal('aiForm');
+
+export const $isFirstValidationAiForm = signal(true);
+export const $isFirstValidationLeadForm = signal(true);

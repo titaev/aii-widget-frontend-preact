@@ -1,4 +1,4 @@
-import { TextInputFieldType } from '@src/types';
+import { FieldFrom, TextInputFieldType } from '@src/types';
 import {
   ERROR_CLASS,
   TEXT_INPUT_CLASS,
@@ -9,13 +9,20 @@ import {
 import { useRef } from 'preact/compat';
 import { handleTextInput } from '@src/controllers/handleTextInput';
 
-export const TextInputField = ({ fieldData }: { fieldData: TextInputFieldType }) => {
+export const TextInputField = ({
+  fieldData,
+  fieldFrom,
+}: {
+  fieldData: TextInputFieldType;
+  fieldFrom: FieldFrom;
+}) => {
   const inputRef = useRef(null);
   const handleInput = (e: any) => {
     handleTextInput({
       value: e.target.value,
       fieldRef: fieldData.fieldRef,
       ref: inputRef.current,
+      fieldFrom,
     });
   };
 

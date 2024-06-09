@@ -141,3 +141,5 @@ export type LSModel = {
 };
 
 export type ModalContent = '' | 'leadForm' | 'gratitude';
+export type PlainContent = 'aiForm' | 'answer';
+export type FieldFrom = 'aiFields' | 'leadsFields';
