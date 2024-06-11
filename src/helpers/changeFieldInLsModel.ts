@@ -6,7 +6,7 @@ export const changeFieldInLsModel = function ({
   field,
   newValue,
 }: {
-  widgetId: number;
+  widgetId: string;
   field: keyof LSModel;
   newValue: string | null | boolean;
 }) {
