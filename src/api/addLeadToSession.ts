@@ -3,8 +3,8 @@ export const addLeadToSession = ({
   sessionId,
   leadData,
 }: {
-  widgetId: number;
-  sessionId: number;
+  widgetId: string;
+  sessionId: string;
   leadData: any;
 }) => {
   return fetch(
