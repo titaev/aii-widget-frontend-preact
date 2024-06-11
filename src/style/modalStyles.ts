@@ -9,6 +9,7 @@ width: 100%;
 height: 100%;
 background-color: var(--modal-overlay);
 z-index: 2;
+display: flex;
 }
 .${MODAL_WRAPPER_CLASS}{
 max-height: calc(100vh - 20px);
