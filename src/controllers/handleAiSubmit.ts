@@ -6,6 +6,7 @@ import {
   $model,
   $plainContent,
 } from '@src/model';
+import { generationStarting } from '@src/actions/generationStarting';
 
 export const handleAiSubmit = (e: SubmitEvent) => {
   e.preventDefault();
@@ -18,7 +19,7 @@ export const handleAiSubmit = (e: SubmitEvent) => {
     ) {
       $modalContent.value = 'leadForm';
     } else {
-      //start generating
+      generationStarting();
       $plainContent.value = 'answer';
     }
   } else {

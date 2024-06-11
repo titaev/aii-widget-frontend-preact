@@ -4,6 +4,7 @@ import { EMAIL_REGEX } from '@src/constants';
 import { FieldFrom } from '@src/types';
 
 export const checkFields = (from: FieldFrom) => {
+  console.log('check fields');
   let isCorrect = true;
   $model.value.fields[from].forEach((item, index) => {
     if (item.type === 'TextInputField' && item.required && item.value === '') {
@@ -22,6 +23,7 @@ export const checkFields = (from: FieldFrom) => {
       $model.value.fields[from][index].errorText = '';
     }
   });
+  console.log($model.value);
   $model.value = { ...$model.value };
   return isCorrect;
 };

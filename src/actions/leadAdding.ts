@@ -23,6 +23,8 @@ export const leadAdding = async () => {
         leadData,
       });
       changeFieldInLsModel({ widgetId: $model.value.id, field: 'leadIsCollected', newValue: true });
-    } catch (er) {}
+    } catch (err) {
+      console.log(err);
+    }
   }
 };

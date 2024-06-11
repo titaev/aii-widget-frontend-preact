@@ -1,5 +1,5 @@
-import { FORM_CONTAINER_CLASS, MINI_PAGE_CLASS } from '@src/classNames';
-import { $isPreviewMode, $model } from '@src/model';
+import { DISABLED_CLASS, FORM_CONTAINER_CLASS, MINI_PAGE_CLASS } from '@src/classNames';
+import { $isDisabledAiForm, $isPreviewMode, $model } from '@src/model';
 import { Ad } from '@src/components/Ad';
 import { GenerateButton } from '@src/components/GenerateButton';
 import { typeFieldMap } from '@src/typeFieldMap';
@@ -8,9 +8,12 @@ import { noop } from '@src/helpers/noop';
 
 export const AiForm = () => {
   const isMiniPage = $model.value.page_view === 'mini_page';
-
   return (
-    <div className={`${FORM_CONTAINER_CLASS} ${isMiniPage ? MINI_PAGE_CLASS : ''}`}>
+    <div
+      className={`${FORM_CONTAINER_CLASS} 
+      ${isMiniPage ? MINI_PAGE_CLASS : ''} 
+      ${$isDisabledAiForm.value ? DISABLED_CLASS : ''}`}
+    >
       <form noValidate={true} onSubmit={$isPreviewMode.value ? noop : handleAiSubmit}>
         {$model.value.fields.aiFields.map((item, index) => {
           const Field = typeFieldMap[item.type];

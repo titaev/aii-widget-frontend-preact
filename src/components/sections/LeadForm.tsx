@@ -7,11 +7,8 @@ import { handleLeadSubmit } from '@src/controllers/handleLeadSubmit';
 import { noop } from '@src/helpers/noop';
 
 export const LeadForm = () => {
-  $model.value.fields.leadsFields = $model.value.fields.leadsFields
-    .filter(item => item.enabled)
-    .map(item => {
-      return item.type === 'TextInputField' ? { ...item, errorText: '' } : item;
-    });
+  //TODO оптимизировать, чтобы filter был при загрузке один раз
+  $model.value.fields.leadsFields = $model.value.fields.leadsFields.filter(item => item.enabled);
 
   return (
     <div className={MODAL_FORM_WRAPPER_CLASS}>

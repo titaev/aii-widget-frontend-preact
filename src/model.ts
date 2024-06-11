@@ -20,6 +20,7 @@ export const $isShowGenerateMoreBtn = signal(false);
 export const $isShowStopBtn = signal(false);
 export const $modalContent: Signal<ModalContent> = signal('');
 export const $plainContent: Signal<PlainContent> = signal('aiForm');
-
 export const $isFirstValidationAiForm = signal(true);
 export const $isFirstValidationLeadForm = signal(true);
+export const $isDisabledAiForm = signal(false);
+export const $ws: Signal<WebSocket | null> = signal(null);
