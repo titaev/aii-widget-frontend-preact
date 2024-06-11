@@ -11,5 +11,6 @@ export const changeFieldInLsModel = function ({
   newValue: string | null | boolean;
 }) {
   $lsModel.value[field] = newValue as never;
+  $lsModel.value = { ...$lsModel.value };
   localStorage.setItem(`aii-cx-widget-${widgetId}`, JSON.stringify($lsModel.value));
 };

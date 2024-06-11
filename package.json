@@ -16,12 +16,14 @@
   "license": "ISC",
   "dependencies": {
     "@preact/signals": "^1.2.3",
+    "markdown-it": "^14.1.0",
     "preact": "^10.22.0"
   },
   "devDependencies": {
     "@babel/core": "^7.16.5",
     "@babel/preset-env": "^7.16.5",
     "@babel/preset-react": "^7.16.5",
+    "@types/markdown-it": "^14.1.1",
     "@typescript-eslint/eslint-plugin": "^5.30.0",
     "@typescript-eslint/parser": "^5.30.0",
     "babel-loader": "^8.2.3",

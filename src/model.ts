@@ -9,8 +9,7 @@ export const $isPreviewMode = signal(true);
 
 export const $lsModel: Signal<LSModel> = signal(null);
 
-export const $isShowLeadForm = signal(false);
-export const $isShowGratitude = signal(false);
+export const $aiAnswer = signal('');
 
 export const $isShowCopyBtn = signal(false);
 
