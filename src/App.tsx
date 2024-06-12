@@ -8,22 +8,21 @@ import { MainLayout } from '@src/components/layouts/MainLayout';
 import { Loader } from '@src/components/Loader';
 import { MiniPageLayout } from '@src/components/layouts/MiniPageLayout';
 import { PlainLayout } from '@src/components/layouts/PlainLayout';
-import { WidgetMode } from '@src/types';
 import { PreviewLayout } from '@src/components/layouts/PreviewLayout';
 import { modelGetting } from '@src/actions/modelGetting';
 
-export const App = ({ widgetId, mode }: { widgetId: string; mode: WidgetMode }) => {
+export const App = ({ widgetId, isPreviewMode }: { widgetId: string; isPreviewMode: boolean }) => {
   useLayoutEffect(() => {
-    $isPreviewMode.value = mode !== 'normal';
+    $isPreviewMode.value = isPreviewMode;
     checkAndSetLsModel(widgetId);
-    if (mode === 'normal') {
+    if (!isPreviewMode) {
       incrementViewCount(widgetId); //TODO сделать intersection observer
       modelGetting(widgetId);
     }
-  }, [mode, widgetId]);
+  }, [isPreviewMode, widgetId]);
 
-  if (mode !== 'normal') {
-    return <PreviewLayout widgetId={widgetId} mode={mode} />;
+  if (isPreviewMode) {
+    return <PreviewLayout widgetId={widgetId} />;
   }
 
   if ($isLoadingModel.value) {

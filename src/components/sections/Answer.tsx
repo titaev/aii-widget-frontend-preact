@@ -15,7 +15,7 @@ export const Answer = () => {
   const isMiniPage = $model.value.page_view === 'mini_page';
   useEffect(() => {
     setDefaultAiAnswer();
-  }, []);
+  });
 
   return (
     <div className={`${ANSWER_CONTAINER_CLASS} ${isMiniPage ? MINI_PAGE_CLASS : ''}`}>

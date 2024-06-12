@@ -11,12 +11,15 @@
 </head>
 <body>
 <div>
-    <button>Push</button>
+    <button class="model">Model</button>
+    <button class="lead">Show lead form</button>
+    <button class="gratitude">Show gratitude</button>
 </div>
 <div style="overflow: auto; width: 800px; height: 400px; border: 1px solid red">
     <div
             class="aii-cx-widget-root"
             data-id="32267a10-a11f-475d-94f1-f4b73ff3ecd8"
+            data-preview="true"
     ></div>
 </div>
 <script>
@@ -153,12 +156,28 @@
         "email_ai_answer_white_list_emails": null,
         "email_ai_answer_enable": false
     }
-    const button = document.querySelector('button')
-    button.onclick = () => {
+    const buttonModel = document.querySelector('.model')
+    buttonModel.onclick = () => {
         document.dispatchEvent(new CustomEvent(`aii-cx-widget-32267a10-a11f-475d-94f1-f4b73ff3ecd8-set-model-data`, {
             detail: {data: modelData},
-            bubbles: true, // позволяет событию всплывать по дереву DOM
-            composed: true // позволяет событию пересекать границу shadow DOM
+            bubbles: true,
+            composed: true
+        }))
+    }
+    const buttonLead = document.querySelector('.lead')
+    buttonLead.onclick = () => {
+        document.dispatchEvent(new CustomEvent(`aii-cx-widget-32267a10-a11f-475d-94f1-f4b73ff3ecd8-change-preview-mode`, {
+            detail: {mode: 'leadForm'},
+            bubbles: true,
+            composed: true
+        }))
+    }
+    const buttonGratitude = document.querySelector('.gratitude')
+    buttonGratitude.onclick = () => {
+        document.dispatchEvent(new CustomEvent(`aii-cx-widget-32267a10-a11f-475d-94f1-f4b73ff3ecd8-change-preview-mode`, {
+            detail: {mode: 'gratitude'},
+            bubbles: true,
+            composed: true
         }))
     }
 </script>
