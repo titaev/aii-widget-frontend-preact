@@ -18,6 +18,8 @@ import {
 import { locale } from '@src/locale';
 import { handleResetButton } from '@src/controllers/handleResetButton';
 import { handleCopyButton } from '@src/controllers/handleCopyButton';
+import { handleMoreButton } from '@src/controllers/handleMoreButton';
+import { handleStopButton } from '@src/controllers/handleStopButton';
 
 export const AnswerButtons = () => {
   const isShowButtonsSection =
@@ -31,16 +33,22 @@ export const AnswerButtons = () => {
       {$isShowCopyBtn.value && (
         <button
           onClick={handleCopyButton}
-          className={`${BUTTON_CLASS} ${COPY_BUTTON_CLASS} ${$isCopyActive.value ? COPIED_CLASS : ''}`}
+          className={`${BUTTON_CLASS} 
+          ${COPY_BUTTON_CLASS} 
+          ${$isCopyActive.value ? COPIED_CLASS : ''}`}
         >
           {locale.copy}
         </button>
       )}
       {$isShowStopBtn.value && (
-        <button className={`${BUTTON_CLASS} ${STOP_BUTTON_CLASS}`}>{locale.stop}</button>
+        <button onClick={handleStopButton} className={`${BUTTON_CLASS} ${STOP_BUTTON_CLASS}`}>
+          {locale.stop}
+        </button>
       )}
       {$isShowGenerateMoreBtn.value && $model.value.fields.enableGenerateMoreBtn && (
-        <button className={`${BUTTON_CLASS} ${MORE_BUTTON_CLASS}`}>{locale.more}</button>
+        <button onClick={handleMoreButton} className={`${BUTTON_CLASS} ${MORE_BUTTON_CLASS}`}>
+          {locale.more}
+        </button>
       )}
       {$isShowResetBtn.value && (
         <button onClick={handleResetButton} className={`${BUTTON_CLASS} ${RESET_BUTTON_CLASS}`}>

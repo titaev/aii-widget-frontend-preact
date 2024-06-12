@@ -10,12 +10,12 @@ export const fillingAdding = async () => {
     return;
   }
   const fillingData = {
-    fillingData: { aiFields: collectPayloadDataFromFields('aiFields') },
+    filling_data: { aiFields: collectPayloadDataFromFields('aiFields') },
     prompt: getReadyPrompt(),
     ai_response: $lsModel.value.generationResult,
     version: $model.value.fields.version,
   };
-  if ($lsModel.value.fillingId) {
+  if (!$lsModel.value.fillingId) {
     const data = await addFillingToSession({
       widgetId: $model.value.id,
       sessionId: $lsModel.value.sessionId,
