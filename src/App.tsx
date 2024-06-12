@@ -1,5 +1,4 @@
 import { useLayoutEffect } from 'preact/compat';
-import { getModel } from '@src/api/getModel';
 import { $isErrorModel, $isLoadingModel, $isPreviewMode, $model } from '@src/model';
 import { incrementViewCount } from '@src/api/incrementViewCount';
 import { checkAndSetLsModel } from '@src/helpers/checkAndSetLsModel';
@@ -11,6 +10,7 @@ import { MiniPageLayout } from '@src/components/layouts/MiniPageLayout';
 import { PlainLayout } from '@src/components/layouts/PlainLayout';
 import { WidgetMode } from '@src/types';
 import { PreviewLayout } from '@src/components/layouts/PreviewLayout';
+import { modelGetting } from '@src/actions/modelGetting';
 
 export const App = ({ widgetId, mode }: { widgetId: string; mode: WidgetMode }) => {
   useLayoutEffect(() => {
@@ -18,7 +18,7 @@ export const App = ({ widgetId, mode }: { widgetId: string; mode: WidgetMode }) 
     checkAndSetLsModel(widgetId);
     if (mode === 'normal') {
       incrementViewCount(widgetId); //TODO сделать intersection observer
-      getModel(widgetId);
+      modelGetting(widgetId);
     }
   }, [mode, widgetId]);
 
