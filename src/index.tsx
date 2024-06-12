@@ -7,7 +7,7 @@ rootNodes.forEach(node => {
 
   render(
     // @ts-ignore
-    <App widgetId={node.dataset.id} isPreviewMode={node.dataset.mode === 'preview'} />,
+    <App widgetId={node.dataset.id} mode={node.dataset.mode || 'normal'} />,
     node.shadowRoot,
   );
 });

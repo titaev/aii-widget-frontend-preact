@@ -1,9 +1,12 @@
-import { $lsModel, $model } from '@src/model';
+import { $isPreviewMode, $lsModel, $model } from '@src/model';
 import { addLeadToSession } from '@src/api/addLeadToSession';
 import { collectPayloadDataFromFields } from '@src/helpers/collectPayloadDataFromFields';
 import { changeFieldInLsModel } from '@src/helpers/changeFieldInLsModel';
 
 export const leadAdding = async () => {
+  if ($isPreviewMode.value) {
+    return;
+  }
   if (!$lsModel.value.leadIsCollected) {
     const leadData = {
       email:

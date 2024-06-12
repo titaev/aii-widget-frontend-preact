@@ -15,7 +15,13 @@ import {
 import { locale } from '@src/locale';
 
 export const AnswerButtons = () => {
-  return (
+  const isShowButtonsSection =
+    $isShowCopyBtn.value ||
+    $isShowStopBtn.value ||
+    $isShowGenerateMoreBtn.value ||
+    $isShowResetBtn.value;
+
+  return isShowButtonsSection ? (
     <div className={ANSWER_BUTTONS_WRAPPER_CLASS}>
       {$isShowCopyBtn.value && (
         <button className={`${BUTTON_CLASS} ${COPY_BUTTON_CLASS}`}>{locale.copy}</button>
@@ -30,5 +36,5 @@ export const AnswerButtons = () => {
         <button className={`${BUTTON_CLASS} ${RESET_BUTTON_CLASS}`}>{locale.reset}</button>
       )}
     </div>
-  );
+  ) : null;
 };

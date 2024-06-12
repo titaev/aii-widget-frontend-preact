@@ -1,4 +1,4 @@
-import { useEffect } from 'preact/compat';
+import { useLayoutEffect } from 'preact/compat';
 import { getModel } from '@src/api/getModel';
 import { $isErrorModel, $isLoadingModel, $isPreviewMode, $model } from '@src/model';
 import { incrementViewCount } from '@src/api/incrementViewCount';
@@ -7,26 +7,23 @@ import { ErrorNotification } from '@src/components/ErrorNotification';
 import { locale } from '@src/locale';
 import { MainLayout } from '@src/components/layouts/MainLayout';
 import { Loader } from '@src/components/Loader';
-import { PreviewLayout } from '@src/components/layouts/PreviewLayout';
 import { MiniPageLayout } from '@src/components/layouts/MiniPageLayout';
 import { PlainLayout } from '@src/components/layouts/PlainLayout';
+import { WidgetMode } from '@src/types';
+import { PreviewLayout } from '@src/components/layouts/PreviewLayout';
 
-export const App = ({ widgetId, isPreviewMode }: { widgetId: string; isPreviewMode: boolean }) => {
-  useEffect(() => {
-    $isPreviewMode.value = isPreviewMode;
-    if (!isPreviewMode) {
-      checkAndSetLsModel(widgetId);
+export const App = ({ widgetId, mode }: { widgetId: string; mode: WidgetMode }) => {
+  useLayoutEffect(() => {
+    $isPreviewMode.value = mode !== 'normal';
+    checkAndSetLsModel(widgetId);
+    if (mode === 'normal') {
       incrementViewCount(widgetId); //TODO сделать intersection observer
       getModel(widgetId);
     }
-  }, []);
+  }, [mode, widgetId]);
 
-  if (isPreviewMode) {
-    return (
-      <MainLayout>
-        <PreviewLayout widgetId={widgetId} />
-      </MainLayout>
-    );
+  if (mode !== 'normal') {
+    return <PreviewLayout widgetId={widgetId} mode={mode} />;
   }
 
   if ($isLoadingModel.value) {
@@ -36,6 +33,7 @@ export const App = ({ widgetId, isPreviewMode }: { widgetId: string; isPreviewMo
       </MainLayout>
     );
   }
+
   if ($isErrorModel.value) {
     return (
       <MainLayout>

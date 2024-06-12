@@ -1,6 +1,8 @@
 export type CollectLeadStrategy = 'before_ai_answer' | 'after_ai_answer' | 'email_ai_answer';
 export type PageViewMode = 'mini_page' | 'plain_page';
 
+export type WidgetMode = 'normal' | 'wholePreview' | 'leadFormPreview' | 'gratitudePreview';
+
 export type TextInputFieldType = {
   type: 'TextInputField';
   title: string;

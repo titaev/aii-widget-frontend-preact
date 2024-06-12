@@ -17,15 +17,146 @@
     <div
             class="aii-cx-widget-root"
             data-id="32267a10-a11f-475d-94f1-f4b73ff3ecd8"
-            data-mode=""
     ></div>
 </div>
 <script>
-
+    const modelData = {
+        "id": "32267a10-a11f-475d-94f1-f4b73ff3ecd8",
+        "name": "a",
+        "fields": {
+            "version": "3",
+            "aiFields": [
+                {
+                    "type": "ImageField",
+                    "align": "center",
+                    "image": {
+                        "id": 27,
+                        "url": "https://dev-all-docs-bucket.fra1.digitaloceanspaces.com/dev-all-docs-bucket/public/user_146/lead_form_None/design/veh1.jpg"
+                    },
+                    "width": 80,
+                    "fieldRef": "#Field3",
+                    "maxHeight": "30"
+                },
+                {
+                    "type": "TextInputField",
+                    "title": "еее",
+                    "value": "",
+                    "fieldRef": "#Field4",
+                    "required": true,
+                    "description": "asda asd asd"
+                },
+                {
+                    "type": "TextInputField",
+                    "title": "444",
+                    "value": "",
+                    "fieldRef": "#Field7",
+                    "required": false,
+                    "description": "ggjsdkf skdkf jsd"
+                },
+                {
+                    "type": "HtmlField",
+                    "markup": "\n<div>\n    <h3>HTML</h3>\n</div>",
+                    "fieldRef": "#Field5"
+                },
+                {
+                    "size": "h1",
+                    "type": "HeaderField",
+                    "title": "Hello",
+                    "fieldRef": "#Field6"
+                }
+            ],
+            "aiPrompt": "Сгенерируй анекдот про штирлица-басиста\n",
+            "runAiBtn": {
+                "type": "ButtonField",
+                "title": "Сгенерировать",
+                "fieldRef": "#runAiBtnRef"
+            },
+            "enableLeads": true,
+            "leadsFields": [
+                {
+                    "type": "TextInputField",
+                    "title": "Адрес электронной почты",
+                    "value": "",
+                    "enabled": true,
+                    "fieldRef": "#email",
+                    "required": true,
+                    "description": ""
+                },
+                {
+                    "type": "TextInputField",
+                    "title": "Phone number",
+                    "value": "",
+                    "enabled": true,
+                    "fieldRef": "#phone",
+                    "required": true,
+                    "description": ""
+                },
+                {
+                    "type": "TextInputField",
+                    "title": "Имя",
+                    "value": "",
+                    "enabled": true,
+                    "fieldRef": "#name",
+                    "required": true,
+                    "description": ""
+                }
+            ],
+            "submitFormBtn": {
+                "type": "ButtonField",
+                "title": "Отправить",
+                "fieldRef": "#submitFormBtnRef"
+            },
+            "formCssOverrides": "/* you can override properties for all elements here \nto change the font-family import the font in html using <link rel=\"stylesheet\"/> or an import below. Google Fonts offers many free fonts. \n*/\n\n@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Rubik:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap');\n\n\n#widget-root {\n font-family: 'Rubik', sans-serif;\n}\n\n/* your custom primary color for button */\n.MuiButton-containedPrimary {\n  background-color: #006A64; \n}\n\n/* your custom primary color for button hover */\n.MuiButton-containedPrimary:hover {\n  background-color: #004A46; \n}\n\n/* overrides for Form Controls  */\n.MuiFormControl-root {}\n.MuiTextField-root {}\n.MuiFormLabel-root {}\n.MuiInputBase-formControl {}\n.MuiInputBase-input {}\n\n/* overrides for Input Controls colors  */\n// .Mui-focused.MuiInputLabel-root { color: unset; }\n// .Mui-focused.MuiFilledInput-underline:after { border-bottom-color: unset; }\n\n/* fields classes */\n.inputTextField {}\n.inputTextField > label {}\n.inputTextField > div {}\n.headerField {}\n.buttonField {}\n\n#aiFields {}\n#leadsFields {}\n\n/* overrides for specific buttons */\n#aiFields-runAiBtn {}\n#stopBtn {}\n#resetBtn {}\n#generateMoreBtn {}\n#leadsHr {\n  // height: 6px;\n  // background-color: green;\n  // margin: 0;\n}\n#leadsFields-submitFormBtn {\n  // width: 100%;\n}\n\n@media (max-width: 400px) {\n  \n}\n\n@media (max-width: 600px) {\n  #leadsHr {\n    display: none;\n  }\n}\n\n@media (max-width: 899px) {\n  /* textfieldCaption appears on screens <899px replacing the label of a Textfield input. */\n  .textfieldCaption { }\n}",
+            "enableGenerateMoreBtn": true
+        },
+        "status": "on",
+        "owner": 146,
+        "views": 973,
+        "leads": 27,
+        "fillings": 71,
+        "sessions": 43,
+        "created_at": "2023-11-25 20:51:35",
+        "updated_at": "2024-06-11 19:29:50",
+        "publish": true,
+        "allowed_domains": null,
+        "tariff_show_aii_ads_chat": false,
+        "model_name": "gpt-3.5-turbo",
+        "collect_lead_strategy": "before_ai_answer",
+        "mini_page_company_logo_image": null,
+        "mini_page_default_result_text": null,
+        "design_images": [
+            {
+                "id": 27,
+                "image": "https://dev-all-docs-bucket.fra1.digitaloceanspaces.com/dev-all-docs-bucket/public/user_146/lead_form_None/design/veh1.jpg"
+            }
+        ],
+        "preferences": {
+            "bgColor": null,
+            "bodyFont": "Montserrat",
+            "gratitude": "Спасибо за отправку! Мы свяжемся с вами в течение 1 рабочего дня.",
+            "headerFont": "Pacifico",
+            "miniPageCta": "# Привет! \n## Я искусственный интеллект, готовый помочь тебе с любыми задачами. Давай начнем!",
+            "primaryColor": {
+                "hex": "#8e8df1",
+                "hsl": {
+                    "h": 240,
+                    "l": 0,
+                    "s": 0
+                }
+            },
+            "isBgTransparent": false
+        },
+        "page_view": "mini_page",
+        "version": 1,
+        "email_ai_answer_body": null,
+        "email_ai_answer_subject": null,
+        "email_ai_answer_white_list_emails": null,
+        "email_ai_answer_enable": false
+    }
     const button = document.querySelector('button')
     button.onclick = () => {
-        document.dispatchEvent(new CustomEvent(`aii-cx-widget-32267a10-a11f-475d-94f1-f4b73ff3ecd8-show-lead-form`, {
-            detail: {isOpened: true},
+        document.dispatchEvent(new CustomEvent(`aii-cx-widget-32267a10-a11f-475d-94f1-f4b73ff3ecd8-set-model-data`, {
+            detail: {data: modelData},
             bubbles: true, // позволяет событию всплывать по дереву DOM
             composed: true // позволяет событию пересекать границу shadow DOM
         }))
