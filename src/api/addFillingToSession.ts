@@ -3,8 +3,8 @@ export const addFillingToSession = ({
   sessionId,
   fillingData,
 }: {
-  widgetId: number;
-  sessionId: number;
+  widgetId: string;
+  sessionId: string;
   fillingData: any;
 }) => {
   return fetch(

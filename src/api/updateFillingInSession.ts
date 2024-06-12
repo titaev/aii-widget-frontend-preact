@@ -4,9 +4,9 @@ export const updateFillingInSession = ({
   fillingId,
   fillingData,
 }: {
-  widgetId: number;
-  sessionId: number;
-  fillingId: number;
+  widgetId: string;
+  sessionId: string;
+  fillingId: string;
   fillingData: any;
 }) => {
   return fetch(

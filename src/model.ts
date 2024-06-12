@@ -13,7 +13,7 @@ export const $aiAnswer = signal('');
 
 export const $isShowCopyBtn = signal(false);
 
-export const $isShowResetBtn = signal(false);
+export const $isShowResetBtn = signal(true);
 
 export const $isShowGenerateMoreBtn = signal(false);
 
@@ -24,3 +24,7 @@ export const $isFirstValidationAiForm = signal(true);
 export const $isFirstValidationLeadForm = signal(true);
 export const $isDisabledAiForm = signal(false);
 export const $ws: Signal<WebSocket | null> = signal(null);
+
+export const $isFirstPromptRequest = signal(true);
+
+export const $isCopyActive = signal(false);

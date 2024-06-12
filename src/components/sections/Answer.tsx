@@ -1,4 +1,4 @@
-import { $aiAnswer, $lsModel, $model } from '@src/model';
+import { $aiAnswer, $model } from '@src/model';
 import {
   ANSWER_CLASS,
   ANSWER_CONTAINER_CLASS,
@@ -7,17 +7,14 @@ import {
 } from '@src/classNames';
 
 import markdownit from 'markdown-it';
-import { DEFAULT_CTA_TEXT } from '@src/constants';
 import { useEffect } from 'preact/compat';
 import { AnswerButtons } from '@src/components/AnswerButtons';
+import { setDefaultAiAnswer } from '@src/helpers/setDefaultAiAnswer';
 
 export const Answer = () => {
   const isMiniPage = $model.value.page_view === 'mini_page';
   useEffect(() => {
-    $aiAnswer.value =
-      $lsModel.value?.generationResult ||
-      $model.value?.preferences?.miniPageCta ||
-      DEFAULT_CTA_TEXT;
+    setDefaultAiAnswer();
   }, []);
 
   return (
