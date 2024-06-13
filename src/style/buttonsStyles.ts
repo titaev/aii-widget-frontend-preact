@@ -10,12 +10,12 @@ import {
 
 export const buttonsStyles = `
 .${GENERATE_BUTTON_WRAPPER_CLASS}{
-padding-top: 10px;
+padding-top: calc(var(--root-size) * 0.1);
 }
 .${BUTTON_CLASS}{
 text-transform: uppercase;
-padding: 10px 15px;
-border-radius: 5px;
+padding: calc(var(--root-size) * 0.1) calc(var(--root-size) * 0.15);
+border-radius: calc(var(--root-size) * 0.05);
 border: none;
 outline: none;
 background-color: var(--primary);
@@ -24,6 +24,7 @@ font-family: inherit;
 cursor: pointer;
 animation: appear 400ms 1 ease-in 0s none; 
 opacity: 1;
+font-size: calc(var(--root-size) * 0.14);
 }
 .${BUTTON_CLASS}:hover{
 opacity: 0.6;
@@ -41,7 +42,7 @@ pointer-events: none;
 .${RESET_BUTTON_CLASS}{
 color: var(--base-light);
 background-color: var(--reset-btn);
-padding-left: 30px;
+padding-left: calc(var(--root-size) * 0.3);
 position: relative;
 border: 1px solid var(--reset-btn);
 margin-left: auto;
@@ -52,9 +53,9 @@ box-shadow: -1px -1px 5px var(--reset-btn), 1px 1px 5px var(--reset-btn);
 .${RESET_BUTTON_CLASS}:before, .${RESET_BUTTON_CLASS}:after{
 content: '';
 position: absolute;
-left: 17px;
+left: calc(var(--root-size) * 0.17);
 top: 50%;
-height: 10px;
+height: calc(var(--root-size) * 0.1);
 width: 2px;
 background-color: currentColor;
 }
@@ -65,7 +66,7 @@ transform: translateY(-50%) rotate(45deg);
 transform: translateY(-50%) rotate(-45deg);
 }
 .${MORE_BUTTON_CLASS}{
-padding-left: 30px;
+padding-left: calc(var(--root-size) * 0.3);
 position: relative;
 border: 1px solid var(--primary);
 color: var(--inverted-lightness-primary);
@@ -74,9 +75,9 @@ background-color: var(--primary);
 .${MORE_BUTTON_CLASS}:before, .${MORE_BUTTON_CLASS}:after{
 content: '';
 position: absolute;
-left: 17px;
+left: calc(var(--root-size) * 0.17);
 top: 50%;
-height: 10px;
+height: calc(var(--root-size) * 0.1);
 width: 1px;
 background-color: currentColor;
 }
@@ -87,7 +88,7 @@ transform: translateY(-50%);
 transform: translateY(-50%) rotate(90deg);
 }
 .${STOP_BUTTON_CLASS}{
-padding-left: 30px;
+padding-left: calc(var(--root-size) * 0.3);
 position: relative;
 border: 1px solid var(--primary);
 color: var(--inverted-lightness-primary);
@@ -99,12 +100,12 @@ position: absolute;
 top: 50%;
 left: 12px;
 transform: translateY(-50%);
-height: 10px;
-width: 10px;
+height: calc(var(--root-size) * 0.1);
+width: calc(var(--root-size) * 0.1);
 background-color: currentColor;
 }
 .${COPY_BUTTON_CLASS}{
-padding-left: 40px;
+padding-left:calc(var(--root-size) * 0.4);
 position: relative;
 border: 1px solid var(--primary);
 color: var(--inverted-lightness-primary);
@@ -114,9 +115,9 @@ background-color: var(--primary);
 content: '';
 position: absolute;
 top: 50%;
-left: 20px;
-height: 14px;
-width: 14px;
+left: calc(var(--root-size) * 0.2);
+height: calc(var(--root-size) * 0.14);
+width: calc(var(--root-size) * 0.14);
 border: 2px solid var(--inverted-lightness-primary);
 border-radius: 3px;
 transition: 300ms;
@@ -130,7 +131,7 @@ transform: translate(-35%, -35%);
 }
 .${COPY_BUTTON_CLASS}.${COPIED_CLASS}:before{
 width: 0;
-height: 7px;
+height: calc(var(--root-size) * 0.07);
 transform: translate(-200%, -40%) rotate(-45deg);
 }
 .${COPY_BUTTON_CLASS}.${COPIED_CLASS}:after{

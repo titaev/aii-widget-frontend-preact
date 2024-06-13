@@ -14,7 +14,7 @@ display: flex;
 .${MODAL_WRAPPER_CLASS}{
 max-height: calc(100vh - 20px);
 width: 100%;
-max-width: 400px;
+max-width: calc(var(--root-size) * 4);
 overflow-y: auto;
 margin: auto;
 animation: appear 300ms 1 ease-in 0s forwards;

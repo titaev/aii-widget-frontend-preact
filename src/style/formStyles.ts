@@ -5,15 +5,15 @@ export const formStyles = `
 max-width: 400px;
 width: 100%;
 background-color: var(--base-light);
-padding: 30px 30px 20px;
-border-radius: 10px;
+padding: calc(var(--root-size) * 0.3) calc(var(--root-size) * 0.3) calc(var(--root-size) * 0.2);
+border-radius: calc(var(--root-size) * 0.1);
 }
 .${FORM_CONTAINER_CLASS}{
 width: 100%;
-border-radius: 15px;
+border-radius: calc(var(--root-size) * 0.15);
 box-shadow: var(--ai-form-shadow);
 background-color: var(--ai-form-bg);
-padding: 20px;
+padding: calc(var(--root-size) * 0.2);
 display: flex;
 flex-direction: column;
 justify-content: flex-start;

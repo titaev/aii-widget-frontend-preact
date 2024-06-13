@@ -9,11 +9,11 @@ import {
 
 export const inputStyles = `
 .${TEXT_INPUT_WRAPPER_CLASS}{
-margin-bottom: 20px;
+margin-bottom: calc(var(--root-size) * 0.2);
 }
 .${TEXT_INPUT_TITLE_CLASS}{
-margin-bottom: 5px;
-font-size: 16px;
+margin-bottom:calc(var(--root-size) * 0.05);
+font-size: calc(var(--root-size) * 0.16);
 font-weight: 400;
 color: var(--input-title);
 }
@@ -27,13 +27,13 @@ border-right: 1px solid var(--input-borders);
 border-left: 1px solid var(--input-borders);
 border-radius: 10px 10px 0 0;
 width: 100%;
-font-size: 16px;
+font-size: calc(var(--root-size) * 0.16);
 font-family: inherit;
-line-height: 20px;
-height: 44px;
+line-height: calc(var(--root-size) * 0.2);
+height: calc(var(--root-size) * 0.44);
 resize: none; 
 overflow: hidden;
-padding: 12px;
+padding: calc(var(--root-size) * 0.12);
 background-color: var(--input-bg);
 position: relative;
 transition: height 0ms;
@@ -64,13 +64,13 @@ box-shadow: inset 0px -2px var(--base-error);
 }
 .${INPUT_ERROR_CLASS}{
 display: block;
-margin-top: 5px;
+margin-top: calc(var(--root-size) * 0.05);
 color: var(--base-error);
-font-size: 10px;
+font-size: calc(var(--root-size) * 0.1);
 }
 .${TEXT_INPUT_DESCRIPTION_CLASS}{
-font-size: 12px;
+font-size:calc(var(--root-size) * 0.12);
 color: var(--input-description);
-margin-top: 7px;
+margin-top: calc(var(--root-size) * 0.07);
 }
 `;
