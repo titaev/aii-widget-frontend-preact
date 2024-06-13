@@ -16,6 +16,7 @@ export const checkFields = (from: FieldFrom) => {
       item.value !== '' &&
       !EMAIL_REGEX.test(item.value)
     ) {
+      isCorrect = false;
       //@ts-ignore
       $model.value.fields[from][index].errorText = locale.incorrectEmail;
     } else {
