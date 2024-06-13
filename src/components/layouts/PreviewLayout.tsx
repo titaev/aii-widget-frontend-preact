@@ -7,9 +7,11 @@ import { Loader } from '@src/components/Loader';
 import { LeadForm } from '@src/components/sections/LeadForm';
 import { Gratitude } from '@src/components/sections/Gratitude';
 import { transformModel } from '@src/helpers/transformModel';
+import { useSetFont } from '@src/hooks/useSetFont';
 
 export const PreviewLayout = ({ widgetId }: { widgetId: string }) => {
   const [mode, setMode] = useState('whole');
+  useSetFont();
   useEffect(() => {
     const handleModelData = (e: any) => {
       $model.value = transformModel(e.detail.data);

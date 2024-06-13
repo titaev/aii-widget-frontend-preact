@@ -3,9 +3,11 @@ import { WidgetTitle } from '@src/components/WidgetTitle';
 import { AiForm } from '@src/components/sections/AiForm';
 import { Answer } from '@src/components/sections/Answer';
 import { useIncrementViewCount } from '@src/hooks/useIncrementViewCount';
+import { useSetFont } from '@src/hooks/useSetFont';
 
 export const MiniPageLayout = () => {
   const ref = useIncrementViewCount();
+  useSetFont();
   return (
     <div ref={ref} className={`${WIDGET_CONTAINER_CLASS} ${MINI_PAGE_CLASS}`}>
       <WidgetTitle />
