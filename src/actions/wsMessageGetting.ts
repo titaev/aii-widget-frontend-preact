@@ -6,11 +6,11 @@ import {
   $isShowResetBtn,
   $isShowStopBtn,
   $lsModel,
-  $modalContent,
   $model,
 } from '@src/model';
 import { changeFieldInLsModel } from '@src/helpers/changeFieldInLsModel';
 import { fillingAdding } from '@src/actions/fillingAdding';
+import { leadFormOpening } from '@src/actions/leadFormOpening';
 
 export const wsMessageGetting = async (data: string) => {
   const message: SocketInboxMessage = JSON.parse(data);
@@ -47,7 +47,7 @@ export const wsMessageGetting = async (data: string) => {
       $model.value.fields.enableLeads &&
       $model.value.collect_lead_strategy === 'after_ai_answer'
     ) {
-      $modalContent.value = 'leadForm';
+      leadFormOpening();
     }
 
     fillingAdding();

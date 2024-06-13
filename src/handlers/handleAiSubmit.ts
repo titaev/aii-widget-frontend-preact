@@ -1,12 +1,7 @@
 import { checkFields } from '@src/helpers/checkFields';
-import {
-  $isFirstValidationAiForm,
-  $lsModel,
-  $modalContent,
-  $model,
-  $plainContent,
-} from '@src/model';
+import { $isFirstValidationAiForm, $lsModel, $model, $plainContent } from '@src/model';
 import { generationStarting } from '@src/actions/generationStarting';
+import { leadFormOpening } from '@src/actions/leadFormOpening';
 
 export const handleAiSubmit = (e: SubmitEvent) => {
   e.preventDefault();
@@ -17,7 +12,7 @@ export const handleAiSubmit = (e: SubmitEvent) => {
       !$lsModel.value.leadIsCollected &&
       $model.value.fields.enableLeads
     ) {
-      $modalContent.value = 'leadForm';
+      leadFormOpening();
     } else {
       generationStarting();
       $plainContent.value = 'answer';
