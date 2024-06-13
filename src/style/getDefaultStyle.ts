@@ -206,7 +206,7 @@ height: 100%;
 }
 .${LOADER_CLASS}{
 position:absolute;
-background-color: light-gray;
+background-color: gray;
 top:0;
 right:0;
 bottom:0;
@@ -215,9 +215,10 @@ left:0;
 .${LOADER_CLASS}:after{
 content:'';
 position:absolute;
-background: linear-gradient(90deg,transparent,gray,transparent);
+background: linear-gradient(90deg,transparent,lightgray,transparent);
 animation-name: ping-pong;
-animation-duration: 4s;
+animation-timing-function: linear;
+animation-duration: 2s;
 animation-direction: alternate;
 animation-iteration-count: infinite;
 height: 100%;

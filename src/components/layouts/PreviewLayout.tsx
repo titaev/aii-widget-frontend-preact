@@ -6,12 +6,13 @@ import { MainLayout } from '@src/components/layouts/MainLayout';
 import { Loader } from '@src/components/Loader';
 import { LeadForm } from '@src/components/sections/LeadForm';
 import { Gratitude } from '@src/components/sections/Gratitude';
+import { transformModel } from '@src/helpers/transformModel';
 
 export const PreviewLayout = ({ widgetId }: { widgetId: string }) => {
   const [mode, setMode] = useState('whole');
   useEffect(() => {
     const handleModelData = (e: any) => {
-      $model.value = e.detail.data;
+      $model.value = transformModel(e.detail.data);
     };
     const handleMode = (e: any) => {
       setMode(e.detail.mode);
