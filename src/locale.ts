@@ -7,6 +7,7 @@ const localeTexts = {
     modelLoadErrorNotification: 'Ошибка. Попробуйте позднее',
     requiredError: 'Обязательное поле',
     incorrectEmail: 'Некорректный адрес почты',
+    defaultCtaText: 'Ответ ИИ будет здесь',
   },
   en: {
     copy: 'Copy',
@@ -16,6 +17,7 @@ const localeTexts = {
     modelLoadErrorNotification: 'Error. Try later',
     requiredError: 'The field is required',
     incorrectEmail: 'Incorrect email',
+    defaultCtaText: 'AI answer will be here',
   },
 };
 export const locale =

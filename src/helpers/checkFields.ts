@@ -13,6 +13,7 @@ export const checkFields = (from: FieldFrom) => {
     } else if (
       item.type === 'TextInputField' &&
       item.fieldRef === '#email' &&
+      item.value !== '' &&
       !EMAIL_REGEX.test(item.value)
     ) {
       //@ts-ignore
