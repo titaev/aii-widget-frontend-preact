@@ -1,8 +1,6 @@
 export type CollectLeadStrategy = 'before_ai_answer' | 'after_ai_answer' | 'email_ai_answer';
 export type PageViewMode = 'mini_page' | 'plain_page';
 
-export type WidgetMode = 'normal' | 'wholePreview' | 'leadFormPreview' | 'gratitudePreview';
-
 export type TextInputFieldType = {
   type: 'TextInputField';
   title: string;
@@ -101,38 +99,20 @@ export type ModelResponse = {
   page_view: PageViewMode;
 
   //Неиспользуемые поля
-  status: string; //TODO
+  status: string;
   views: number;
   leads: number;
   owner: number;
   created_at: string;
   updated_at: string;
-  allowed_domains: any | null; //TODO
-  model_name: 'gpt-3.5-turbo'; //TODO
+  allowed_domains: any | null;
+  model_name: 'gpt-3.5-turbo';
 };
 
 export type SocketInboxMessage = {
   sender: 'bot'; //TODO
   message: string;
   type: 'start' | 'stream' | 'end';
-};
-
-export type SendLeadsPayload = {
-  data: {
-    aiFields: {
-      title: string;
-      fieldRef: string;
-      value: string;
-    }[];
-    originalPrompt: string;
-    leadsFields: {
-      title: string;
-      fieldRef: string;
-      value: string;
-    }[];
-    result: string;
-    version: string;
-  };
 };
 
 export type LSModel = {

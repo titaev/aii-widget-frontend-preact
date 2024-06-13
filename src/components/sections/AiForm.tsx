@@ -2,8 +2,8 @@ import { DISABLED_CLASS, FORM_CONTAINER_CLASS, MINI_PAGE_CLASS } from '@src/clas
 import { $isDisabledAiForm, $model } from '@src/model';
 import { Ad } from '@src/components/Ad';
 import { GenerateButton } from '@src/components/GenerateButton';
-import { typeFieldMap } from '@src/typeFieldMap';
-import { handleAiSubmit } from '@src/controllers/handleAiSubmit';
+import { typeFieldMap } from '@src/components/fields/typeFieldMap';
+import { handleAiSubmit } from '@src/handlers/handleAiSubmit';
 
 export const AiForm = () => {
   const isMiniPage = $model.value.page_view === 'mini_page';

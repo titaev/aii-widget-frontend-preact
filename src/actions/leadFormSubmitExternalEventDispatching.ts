@@ -1,5 +1,6 @@
 import { $isPreviewMode, $lsModel, $model } from '@src/model';
 import { SUBMIT_LEAD_FORM_EVENT } from '@src/constants';
+import { collectPayloadDataFromFields } from '@src/helpers/collectPayloadDataFromFields';
 
 export const leadFormSubmitExternalEventDispatching = () => {
   if ($isPreviewMode.value) {
@@ -11,8 +12,8 @@ export const leadFormSubmitExternalEventDispatching = () => {
       detail: {
         collectLeadStrategy: $model.value.collect_lead_strategy,
         aiGenerationResult: $lsModel.value.generationResult,
-        aiFields: 1, //collectPayloadDataFromFields(this.aiFields), TODO
-        leadsFields: 1, //collectPayloadDataFromFields(this.leadsFields),
+        aiFields: collectPayloadDataFromFields('aiFields'),
+        leadsFields: collectPayloadDataFromFields('leadsFields'),
       },
     },
   );

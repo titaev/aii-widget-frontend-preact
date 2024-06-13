@@ -1,6 +1,5 @@
 import { useLayoutEffect } from 'preact/compat';
 import { $isErrorModel, $isLoadingModel, $isPreviewMode, $model } from '@src/model';
-import { incrementViewCount } from '@src/api/incrementViewCount';
 import { checkAndSetLsModel } from '@src/helpers/checkAndSetLsModel';
 import { ErrorNotification } from '@src/components/ErrorNotification';
 import { locale } from '@src/locale';
@@ -16,7 +15,6 @@ export const App = ({ widgetId, isPreviewMode }: { widgetId: string; isPreviewMo
     $isPreviewMode.value = isPreviewMode;
     checkAndSetLsModel(widgetId);
     if (!isPreviewMode) {
-      incrementViewCount(widgetId); //TODO сделать intersection observer
       modelGetting(widgetId);
     }
   }, [isPreviewMode, widgetId]);

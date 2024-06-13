@@ -8,7 +8,7 @@ import {
   TEXT_INPUT_WRAPPER_CLASS,
 } from '@src/classNames';
 import { useRef } from 'preact/compat';
-import { handleTextInput } from '@src/controllers/handleTextInput';
+import { handleTextInput } from '@src/handlers/handleTextInput';
 
 export const TextInputField = ({
   fieldData,

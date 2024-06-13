@@ -1,9 +1,5 @@
 import { LSModel } from '@src/types';
 
-export const REF_ATTRIBUTE_NAME = 'data-ref';
-export const TYPE_ATTRIBUTE_NAME = 'data-type';
-export const TITLE_ATTRIBUTE_NAME = 'data-title';
-
 export const FIELD_REF_REGEX = /@\[#Field\d]/g;
 
 export const EMAIL_REGEX = /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;

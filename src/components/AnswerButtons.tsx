@@ -16,10 +16,10 @@ import {
   $model,
 } from '@src/model';
 import { locale } from '@src/locale';
-import { handleResetButton } from '@src/controllers/handleResetButton';
-import { handleCopyButton } from '@src/controllers/handleCopyButton';
-import { handleMoreButton } from '@src/controllers/handleMoreButton';
-import { handleStopButton } from '@src/controllers/handleStopButton';
+import { handleResetButton } from '@src/handlers/handleResetButton';
+import { handleCopyButton } from '@src/handlers/handleCopyButton';
+import { handleMoreButton } from '@src/handlers/handleMoreButton';
+import { handleStopButton } from '@src/handlers/handleStopButton';
 
 export const AnswerButtons = () => {
   const isShowButtonsSection =

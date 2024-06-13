@@ -10,9 +10,7 @@ import { generationStarting } from '@src/actions/generationStarting';
 
 export const handleLeadSubmit = async (e: SubmitEvent) => {
   e.preventDefault();
-  console.log('handle lead submit');
   if (checkFields('leadsFields')) {
-    console.log('submit lead form');
     $isFirstValidationLeadForm.value = true;
     leadFormSubmitExternalEventDispatching();
     gratitudeOpening();
