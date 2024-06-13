@@ -11,6 +11,7 @@ import {
 import { changeFieldInLsModel } from '@src/helpers/changeFieldInLsModel';
 import { fillingAdding } from '@src/actions/fillingAdding';
 import { leadFormOpening } from '@src/actions/leadFormOpening';
+import { sessionCreating } from '@src/actions/sessionCreating';
 
 export const wsMessageGetting = async (data: string) => {
   const message: SocketInboxMessage = JSON.parse(data);
@@ -49,7 +50,7 @@ export const wsMessageGetting = async (data: string) => {
     ) {
       leadFormOpening();
     }
-
+    await sessionCreating();
     fillingAdding();
   }
 };
