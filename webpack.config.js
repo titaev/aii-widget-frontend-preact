@@ -13,7 +13,7 @@ module.exports = () => {
     entry: { myAppName: path.resolve(__dirname, './src/index.tsx') },
     output: {
       path: path.resolve(__dirname, './dist'),
-      filename: 'aii-cx-widget-v3.js',
+      filename: `aii-cx-widget-v3.${process.env.NAME_POSTFIX}.js`,
       // https://ui.dev/react-router-cannot-get-url-refresh
       publicPath: production ? '' : '/',
     },
