@@ -7,6 +7,7 @@ export const $isLoadingModel = signal(true);
 export const $isErrorModel = signal(false);
 export const $lsModel: Signal<LSModel> = signal(null);
 export const $aiAnswer = signal('');
+export const $aiAnswerObfuscated = signal('');
 
 //common refs
 export const $ws: Signal<WebSocket | null> = signal(null);

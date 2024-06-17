@@ -112,7 +112,7 @@ export type ModelResponse = {
 export type SocketInboxMessage = {
   sender: 'bot'; //TODO
   message: string;
-  type: 'start' | 'stream' | 'end';
+  type: 'start' | 'stream' | 'stream-obfuscated' | 'end';
 };
 
 export type LSModel = {

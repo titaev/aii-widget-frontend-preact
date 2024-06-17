@@ -3,6 +3,7 @@ import {
   $isDisabledAiForm,
   $isFirstPromptRequest,
   $isShowStopBtn,
+  $lsModel,
   $model,
   $ws,
 } from '@src/model';
@@ -31,7 +32,14 @@ export const generationStarting = () => {
     wsMessageGetting(e.data);
   };
   $ws.value.onopen = e => {
-    $ws.value.send(JSON.stringify({ text: getReadyPrompt() }));
+    $ws.value.send(
+      JSON.stringify({
+        text: getReadyPrompt(),
+        filling_id: $lsModel.value.fillingId,
+        session_id: $lsModel.value.sessionId,
+      }),
+    );
+
     console.debug('websocket on [OPEN] connection', e);
   };
   $ws.value.onerror = e => {
