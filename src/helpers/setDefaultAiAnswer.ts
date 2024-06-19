@@ -1,4 +1,4 @@
-import { $aiAnswer, $lsModel, $model } from '@src/model';
+import { $aiAnswer, $aiAnswerObfuscated, $lsModel, $model } from '@src/model';
 import { locale } from '@src/locale';
 
 export const setDefaultAiAnswer = () => {
@@ -6,4 +6,5 @@ export const setDefaultAiAnswer = () => {
     $lsModel.value?.generationResult ||
     $model.value?.preferences?.miniPageCta ||
     locale.defaultCtaText;
+  $aiAnswerObfuscated.value = '';
 };

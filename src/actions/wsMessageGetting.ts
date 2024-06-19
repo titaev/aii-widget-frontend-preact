@@ -38,7 +38,6 @@ export const wsMessageGetting = async (data: string) => {
   }
   if (message.type === 'stream-obfuscated') {
     $aiAnswerObfuscated.value += message.message;
-    console.log($aiAnswerObfuscated.value);
   }
   if (message.type === 'end') {
     if ($model.value.collect_lead_strategy !== 'email_ai_answer') {
