@@ -3,8 +3,10 @@ import { locale } from '@src/locale';
 
 export const setDefaultAiAnswer = () => {
   $aiAnswer.value =
-    $lsModel.value?.generationResult ||
-    $model.value?.preferences?.miniPageCta ||
-    locale.defaultCtaText;
+    $model.value.page_view === 'plain_page'
+      ? ''
+      : $lsModel.value?.generationResult ||
+        $model.value?.preferences?.miniPageCta ||
+        locale.defaultCtaText;
   $aiAnswerObfuscated.value = '';
 };
