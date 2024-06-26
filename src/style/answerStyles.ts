@@ -3,6 +3,7 @@ import {
   ANSWER_CLASS,
   ANSWER_CONTAINER_CLASS,
   ANSWER_HIDDEN_CLASS,
+  ANSWER_OBFUSCATED_CLASS,
   ANSWER_WRAPPER_CLASS,
   MINI_PAGE_CLASS,
 } from '@src/classNames';
@@ -74,4 +75,7 @@ border: 1px solid var(--inverted-lightness-primary);
 color: var(--inverted-lightness-primary);
 background-color: var(--primary);
 }
+.${ANSWER_OBFUSCATED_CLASS}{
+  filter: blur(5px);
+ }
 `;

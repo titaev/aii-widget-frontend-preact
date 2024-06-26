@@ -21,6 +21,7 @@ export const ANSWER_WRAPPER_CLASS = 'answer-wrapper';
 export const ANSWER_CLASS = 'answer';
 export const ANSWER_HIDDEN_CLASS = 'answer-hidden';
 export const ANSWER_BUTTONS_WRAPPER_CLASS = 'answer-buttons-wrapper';
+export const ANSWER_OBFUSCATED_CLASS = 'answer-obfuscated';
 
 export const GENERATE_BUTTON_WRAPPER_CLASS = 'generate-button-wrapper';
 

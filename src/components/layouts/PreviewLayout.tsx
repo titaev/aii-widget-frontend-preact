@@ -8,6 +8,7 @@ import { LeadForm } from '@src/components/sections/LeadForm';
 import { Gratitude } from '@src/components/sections/Gratitude';
 import { transformModel } from '@src/helpers/transformModel';
 import { useSetFont } from '@src/hooks/useSetFont';
+import { setDefaultAiAnswer } from '@src/helpers/setDefaultAiAnswer';
 
 export const PreviewLayout = ({ widgetId }: { widgetId: string }) => {
   const [mode, setMode] = useState('whole');
@@ -15,6 +16,7 @@ export const PreviewLayout = ({ widgetId }: { widgetId: string }) => {
   useEffect(() => {
     const handleModelData = (e: any) => {
       $model.value = transformModel(e.detail.data);
+      setDefaultAiAnswer();
     };
     const handleMode = (e: any) => {
       setMode(e.detail.mode);
