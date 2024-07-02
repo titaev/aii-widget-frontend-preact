@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <style>
+    * > * {
+      box-sizing: border-box;
+    }
+    p {
+      margin: 0;
+    }
+    .modal {
+      position: absolute;
+      width: 700px;
+      height: 613px;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+
+      background: #ffffff;
+      box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.12);
+      border-radius: 35px;
+      font-family: 'Noto Sans';
+    }
+    .bg-image {
+      position: relative;
+      /* left: 50%;
+      top: -130px;
+      transform: translateX(-50%); */
+      width: 700px;
+      height: 329px;
+      background: #0484ac;
+      border-top-left-radius: 35px;
+      border-top-right-radius: 35px;
+    }
+    .fg-image {
+      position: absolute;
+      left: 0;
+      top: -130px;
+      transform: translate(-110px, 15px);
+    }
+    .modal-inner {
+      /* transform: translateY(-124px); */
+      width: 409px;
+      margin: 50px auto;
+    }
+    .text-1 {
+      font-weight: 700;
+      font-size: 35px;
+      line-height: 24px;
+      text-align: center;
+      color: #0484ac;
+    }
+    .text-2 {
+      /* font-family: 'Noto Sans'; */
+      font-style: normal;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 25px;
+      text-align: center;
+      color: #333333;
+      margin-top: 24px;
+    }
+    .text-2 > b {
+      font-family: 'Fredoka One';
+      /* font-weight: 400; */
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 22px;
+      text-align: center;
+      color: #333333;
+    }
+    .btn {
+      text-align: center;
+      padding: 7px 20px;
+      width: 200px;
+      background: #f18225;
+      box-shadow: 0px 5px 0px #b56521;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 33px;
+      color: #ffffff;
+      margin-inline: auto;
+    }
+  </style>
+  <body>
+    <div class="modal">
+      <img class="bg-image" src="./assets/modal2-1.png" alt="background" />
+      <img class="fg-image" src="./assets/modal2-2.png" alt="foreground" />
+      <div class="modal-inner">
+        <p class="text-1">Спасибо!</p>
+        <p class="text-2">
+          Нейросеть <b>CODDY</b> уже создает персональный план развития для вашего ребенка!
+        </p>
+        <div class="btn" style="margin-top: 35px">OK!</div>
+      </div>
+    </div>
+  </body>
+</html>

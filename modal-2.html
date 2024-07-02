@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <style>
+    * > * {
+      box-sizing: border-box;
+    }
+    p {
+      margin: 0;
+    }
+    .flex {
+      display: flex;
+    }
+    .gap-2 {
+      gap: 16px;
+    }
+    .space-between {
+      justify-content: space-between;
+    }
+    .modal {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 700px;
+      height: 784px;
+      background: #ffffff;
+      box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.12);
+      border-radius: 35px;
+      font-family: 'Noto Sans';
+      padding: 50px;
+
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 50px;
+    }
+    .bg-image {
+      width: 600px;
+      height: 280px;
+      background: #0484ac;
+      border-radius: 8px;
+    }
+    .fg-image {
+      position: absolute;
+      left: 40px;
+      top: -64px;
+    }
+    .content {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .name-input,
+    .email-input,
+    .phone-input {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      padding: 10px 14px;
+      background: #ffffff;
+      border: 1px solid #c2c2c2;
+      box-shadow: 0px 1.46882px 2.93763px rgba(16, 24, 40, 0.05);
+      border-radius: 11.7505px;
+    }
+    .email-input,
+    .phone-input {
+      flex: 1;
+    }
+    .name-input > input,
+    .email-input > input,
+    .phone-input > input {
+      flex: 1;
+      border: 0;
+      outline: none;
+    }
+    .name-input > input::placeholder,
+    .email-input > input::placeholder,
+    .phone-input > input::placeholder {
+      color: #c2c2c2;
+    }
+    .text-2 {
+      font-weight: 700;
+      font-size: 30px;
+      line-height: 41px;
+      color: #333333;
+    }
+    .text-2 > b {
+      font-weight: 700;
+      font-size: 30px;
+      line-height: 41px;
+      text-align: center;
+      color: #0484ac;
+    }
+    .text-2 > span {
+      font-family: 'Fredoka One';
+      font-style: normal;
+      /* font-weight: 400; */
+      font-weight: 700;
+      font-size: 30px;
+      line-height: 36px;
+      text-align: center;
+      color: #0484ac;
+    }
+    .btns {
+      display: flex;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: 0px;
+      gap: 70px;
+    }
+    .btn {
+      text-align: center;
+      padding: 8px 20px;
+      height: 46px;
+      width: 347px;
+      background: #f18225;
+      box-shadow: 0px 5px 0px #b56521;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 33px;
+      color: #ffffff;
+      margin-inline: auto;
+      border: 0;
+    }
+    .btn-2 {
+      display: flex;
+      justify-content: center;
+      flex-direction: row;
+      align-items: center;
+      padding: 14px 23px;
+      width: 183px;
+      border: 1.46882px solid rgba(4, 132, 172, 0.5);
+      border-radius: 50px;
+      color: #0484ac;
+      background: none;
+    }
+    .agree-wrapper {
+      font-family: 'Inter';
+      font-weight: 500;
+      font-size: 10px;
+      line-height: 16px;
+      color: #344054;
+
+      display: flex;
+      align-items: flex-start;
+      gap: 4px;
+    }
+    .agree-wrapper > input {
+      border-radius: 1px;
+      background-color: #f3914d;
+    }
+  </style>
+  <body>
+    <div class="modal">
+      <img class="bg-image" src="./assets/modal3-1.png" alt="background" />
+      <img class="fg-image" src="./assets/modal3-2.png" alt="foreground" />
+      <div class="content">
+        <p class="text-2">Заберите индивидуальный план от <b>нейросети </b><span>CODDY</span>!</p>
+        <div class="name-input">
+          <img src="./assets/profile.png" alt="profile" />
+          <input placeholder="Ваше имя" type="text" />
+        </div>
+
+        <div class="flex gap-2">
+          <div class="email-input">
+            <img src="./assets/email.png" alt="country-code" />
+            <input placeholder="+7 (922) 557-42-47" type="tel" />
+          </div>
+          <div class="email-input">
+            <img src="./assets/email.png" alt="email" />
+            <input placeholder="Ваш имейл" type="email" />
+          </div>
+        </div>
+
+        <div class="agree-wrapper">
+          <input id="agree" type="checkbox" />
+          <label for="agree"
+            >Принимаю условия соглашения и даю согласие на обработку персональных данных на условиях
+            политики конфиденциальности.</label
+          >
+        </div>
+      </div>
+      <div class="btns">
+        <button class="btn">Забрать бесплатно</button>
+        <button class="btn-2">Нет, спасибо</button>
+      </div>
+    </div>
+  </body>
+</html>
