@@ -22,6 +22,8 @@ import { formStyles } from '@src/style/formStyles';
 import { inputStyles } from '@src/style/inputStyles';
 import { modalStyles } from '@src/style/modalStyles';
 import { ModelResponse } from '@src/types';
+import { leadStyles } from '@src/style/leadStyles';
+import { gratitudeStyles } from '@src/style/gratitudeStyles';
 
 export const getDefaultStyle = function (model: ModelResponse) {
   const hue = model?.preferences?.primaryColor?.hsl?.h ?? 177;
@@ -126,6 +128,8 @@ min-height: 100%;
 }
 ${modalStyles}
 ${formStyles}
+${leadStyles}
+${gratitudeStyles}
 ${inputStyles}
 ${answerStyles}
 ${buttonsStyles}

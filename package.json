@@ -1,11 +1,11 @@
 {
   "name": "webpack",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "",
   "homepage": "",
   "main": "src/index.js",
   "scripts": {
-    "dev": "cross-env NODE_ENV=development BUILD_MODE=dev APP_URL=https://dev.aii.cx/app REACT_APP_BE_API_URL=https://dev-admin-backend.aii.cx/api/v1 REACT_APP_FORM_SOCKET_URL=wss://dev-chat-backend.aii.cx/chat/v2/lead_form webpack serve --config ./webpack.config.js",
+    "dev": "cross-env NAME_POSTFIX=dev NODE_ENV=development BUILD_MODE=dev APP_URL=https://dev.aii.cx/app REACT_APP_BE_API_URL=https://dev-admin-backend.aii.cx/api/v1 REACT_APP_FORM_SOCKET_URL=wss://dev-chat-backend.aii.cx/chat/v2/lead_form webpack serve --config ./webpack.config.js",
     "build:prod": "cross-env NAME_POSTFIX=prod NODE_ENV=production BUILD_MODE=prod APP_URL=https://aii.cx/app REACT_APP_BE_API_URL=https://admin-backend.aii.cx/api/v1 REACT_APP_FORM_SOCKET_URL=wss://chat-backend.aii.cx/chat/v2/lead_form webpack --config webpack.config.js",
     "build:dev": "cross-env NAME_POSTFIX=dev NODE_ENV=production BUILD_MODE=dev APP_URL=https://dev.aii.cx/app REACT_APP_BE_API_URL=https://dev-admin-backend.aii.cx/api/v1 REACT_APP_FORM_SOCKET_URL=wss://dev-chat-backend.aii.cx/chat/v2/lead_form webpack --config webpack.config.js",
     "lint": "eslint ./src --ext js,jsx,ts,tsx",
@@ -24,6 +24,7 @@
     "@babel/preset-env": "^7.16.5",
     "@babel/preset-react": "^7.16.5",
     "@types/markdown-it": "^14.1.1",
+    "@types/node": "^20.14.9",
     "@typescript-eslint/eslint-plugin": "^5.30.0",
     "@typescript-eslint/parser": "^5.30.0",
     "babel-loader": "^8.2.3",
