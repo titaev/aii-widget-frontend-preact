@@ -251,7 +251,7 @@ p {
   position: absolute;
   height: 0;
   width: calc(var(--checkbox-height) * .2);
-  background-color: #34b93d;
+  background-color: #F3914D;
   display: inline-block;
   -moz-transform-origin: left top;
   -ms-transform-origin: left top;
@@ -286,7 +286,7 @@ p {
 
 .checkbox-wrapper-19 input[type=checkbox]:checked + .check-box,
 .checkbox-wrapper-19 .check-box.checked {
-  border-color: #34b93d;
+  border-color: #F3914D;
 }
 .checkbox-wrapper-19 input[type=checkbox]:checked + .check-box::after,
 .checkbox-wrapper-19 .check-box.checked::after {
