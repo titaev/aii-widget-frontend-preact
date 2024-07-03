@@ -9,6 +9,7 @@ import bgImg from '../../../assets/modal3-1.png';
 import fgImg from '../../../assets/modal3-2.png';
 import profileImg from '../../../assets/profile.png';
 import emailImg from '../../../assets/email.png';
+import phoneImg from '../../../assets/phone.png';
 import closeImg from '../../../assets/close.jpg';
 
 export const LeadForm = () => {
@@ -60,7 +61,7 @@ export const LeadForm = () => {
 
         <div className='flex gap-2'>
           <div className={`phone-input ${phoneField.errorText ? 'error' : ''}`}>
-            <img src={emailImg} alt='country-code' />
+            <img src={phoneImg} alt='phone' />
             <input
               placeholder='+7 (922) 557-42-47'
               type='tel'
