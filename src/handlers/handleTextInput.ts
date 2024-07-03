@@ -4,12 +4,10 @@ import { checkFields } from '@src/helpers/checkFields';
 
 export const handleTextInput = ({
   value,
-  ref,
   fieldRef,
   fieldFrom,
 }: {
   value: string;
-  ref: HTMLInputElement;
   fieldRef: string;
   fieldFrom: FieldFrom;
 }) => {
@@ -19,8 +17,6 @@ export const handleTextInput = ({
   if (input.type === 'TextInputField') {
     input.value = value;
   }
-  ref.style.height = '5px';
-  ref.style.height = ref.scrollHeight + 'px';
 
   if (
     (!$isFirstValidationAiForm.value && fieldFrom === 'aiFields') ||

@@ -8,10 +8,11 @@ import { customUrlRedirecting } from '@src/actions/customUrlRedirecting';
 import { modalClosing } from '@src/actions/modalClosing';
 import { generationStarting } from '@src/actions/generationStarting';
 
-export const handleLeadSubmit = async (e: SubmitEvent) => {
+export const handleLeadSubmit = async (e: SubmitEvent, validateOnly: boolean) => {
   e.preventDefault();
   if (checkFields('leadsFields')) {
     $isFirstValidationLeadForm.value = true;
+    if (validateOnly) return;
     leadFormSubmitExternalEventDispatching();
     gratitudeOpening();
     await sessionCreating();

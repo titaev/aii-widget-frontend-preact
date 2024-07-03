@@ -22,7 +22,6 @@ export const TextInputField = ({
     handleTextInput({
       value: e.target.value,
       fieldRef: fieldData.fieldRef,
-      ref: inputRef.current,
       fieldFrom,
     });
   };
