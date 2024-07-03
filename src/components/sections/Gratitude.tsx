@@ -3,6 +3,7 @@ import { modalClosing } from '@src/actions/modalClosing';
 
 import bgImg from '../../../assets/modal2-1.png';
 import fgImg from '../../../assets/modal2-2.png';
+import closeImg from '../../../assets/close.jpg';
 
 export const Gratitude = () => {
   //TODO добавить логику кастомного html
@@ -10,6 +11,7 @@ export const Gratitude = () => {
 
   return (
     <div className='modal-gratitude'>
+      <img className='close' src={closeImg} alt='close' onClick={modalClosing} />
       <img className='bg-image' src={bgImg} alt='background' />
       <img className='fg-image' src={fgImg} alt='foreground' />
       <div className='modal-inner'>

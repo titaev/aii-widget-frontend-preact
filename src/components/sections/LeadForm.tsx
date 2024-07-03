@@ -9,6 +9,7 @@ import bgImg from '../../../assets/modal3-1.png';
 import fgImg from '../../../assets/modal3-2.png';
 import profileImg from '../../../assets/profile.png';
 import emailImg from '../../../assets/email.png';
+import closeImg from '../../../assets/close.jpg';
 
 export const LeadForm = () => {
   const agreedRef = useRef<HTMLInputElement>(null);
@@ -39,6 +40,7 @@ export const LeadForm = () => {
         handleLeadSubmit(e, !agreedRef.current.checked);
       }}
     >
+      <img className='close' src={closeImg} alt='close' type='button' onClick={modalClosing} />
       <img className='bg-image' src={bgImg} alt='background' />
       <img className='fg-image' src={fgImg} alt='foreground' />
       <div className='content'>

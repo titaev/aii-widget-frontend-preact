@@ -18,6 +18,14 @@ p {
     border-radius: 35px;
     font-family: 'Noto Sans';
 }
+.modal-gratitude .close {
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    border-radius: 60px;
+    z-index: 100;
+    cursor: pointer;
+}
 .modal-gratitude .bg-image {
     position: relative;
     /* left: 50%;

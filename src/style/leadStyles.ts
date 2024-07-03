@@ -33,6 +33,14 @@ p {
     align-items: flex-end;
     gap: 50px;
 }
+.modal-lead .close {
+    position: absolute;
+    top: -50px;
+    right: 50px;
+    border-radius: 60px;
+    z-index: 100;
+    cursor: pointer;
+}
 .modal-lead .bg-image {
     width: 600px;
     height: 280px;
