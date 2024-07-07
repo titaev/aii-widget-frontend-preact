@@ -15,7 +15,7 @@ module.exports = () => {
       path: path.resolve(__dirname, './dist'),
       filename: `aii-cx-widget-v3.${process.env.NAME_POSTFIX}.js`,
       // https://ui.dev/react-router-cannot-get-url-refresh
-      publicPath: production ? '' : '/',
+      publicPath: production ? 'https://aii.cx/app/widget-coddy/' : '/',
     },
 
     module: {
