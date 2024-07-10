@@ -15,12 +15,10 @@ p {
     justify-content: space-between;
 }
 .modal-lead {
-    z-index: 10;
-    // position: absolute;
-    // left: 50%;
-    // top: 50%;
-    // transform: translate(-50%, -50%);
-    width: 700px;
+    position: relative;
+    z-index: 10000;
+    width: 100%;
+    max-width: 700px;
     height: 784px;
     background: #ffffff;
     box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.12);
@@ -33,10 +31,15 @@ p {
     align-items: flex-end;
     gap: 50px;
 }
+@media screen and (max-width: 760px) {
+  .modal-lead {
+    margin-inline: 20px;
+  }
+}
 .modal-lead .close {
     position: absolute;
     top: -50px;
-    right: 50px;
+    right: -48px;
     border-radius: 60px;
     z-index: 100;
     cursor: pointer;
@@ -44,7 +47,8 @@ p {
     animation: fadeIn .3s forwards 3s;
 }
 .modal-lead .bg-image {
-    width: 600px;
+    width: 100%;
+    max-width: 600px;
     height: 280px;
     background: #0484ac;
     border-radius: 8px;
@@ -120,7 +124,6 @@ p {
     color: #0484ac;
 }
 .modal-lead .btns {
-    display: flex;
     display: flex;
     flex-direction: row;
     align-items: center;

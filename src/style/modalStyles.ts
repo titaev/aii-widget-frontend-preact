@@ -8,15 +8,20 @@ left: 0;
 width: 100%;
 height: 100%;
 background-color: var(--modal-overlay);
-z-index: 2;
+z-index: 200;
 display: flex;
+overflow: auto;
 }
 .${MODAL_WRAPPER_CLASS}{
-max-height: calc(100vh - 20px);
-width: 100%;
 max-width: calc(var(--root-size) * 8);
-// overflow-y: auto;
 margin: auto;
 animation: appear 300ms 1 ease-in 0s forwards;
+padding-bottom: 60px;
+}
+.${MODAL_WRAPPER_CLASS}:has(.modal-lead){
+    margin-top: 60px;
+}
+.${MODAL_WRAPPER_CLASS}:has(.modal-gratitude){
+    margin-top: 160px;
 }
 `;
