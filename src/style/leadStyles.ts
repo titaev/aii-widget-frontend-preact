@@ -40,6 +40,8 @@ p {
     border-radius: 60px;
     z-index: 100;
     cursor: pointer;
+    visibility:hidden;
+    animation: fadeIn .3s forwards 3s;
 }
 .modal-lead .bg-image {
     width: 600px;
@@ -47,6 +49,12 @@ p {
     background: #0484ac;
     border-radius: 8px;
 }
+@media screen and (max-width: 840px) {
+  .modal-lead .close {
+    display: none;
+  }
+}
+
 .modal-lead .fg-image {
     position: absolute;
     left: 40px;
@@ -311,5 +319,17 @@ p {
   -o-animation: dothatopcheck-19 0.4s ease 0s forwards;
   -webkit-animation: dothatopcheck-19 0.4s ease 0s forwards;
   animation: dothatopcheck-19 0.4s ease 0s forwards;
+}
+@keyframes fadeIn {
+  0% {
+    transform:scale(0,0);
+    visibility:visible;
+    opacity:0;
+  }
+  100% {
+    transform:scale(1);
+    visibility:visible;
+    opacity:1;
+  }
 }
 `;

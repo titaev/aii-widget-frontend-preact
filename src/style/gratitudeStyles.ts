@@ -25,6 +25,8 @@ p {
     border-radius: 60px;
     z-index: 100;
     cursor: pointer;
+    visibility:hidden;
+    animation: fadeIn .3s forwards 3s;
 }
 .modal-gratitude .bg-image {
     position: relative;
@@ -36,6 +38,11 @@ p {
     background: #0484ac;
     border-top-left-radius: 35px;
     border-top-right-radius: 35px;
+}
+@media screen and (max-width: 840px) {
+  .modal-gratitude .close {
+    display: none;
+  }
 }
 .modal-gratitude .fg-image {
     position: absolute;
@@ -87,5 +94,17 @@ p {
     color: #ffffff;
     margin-inline: auto;
     cursor: pointer;
+}
+@keyframes fadeIn {
+  0% {
+    transform:scale(0,0);
+    visibility:visible;
+    opacity:0;
+  }
+  100% {
+    transform:scale(1);
+    visibility:visible;
+    opacity:1;
+  }
 }
 `;

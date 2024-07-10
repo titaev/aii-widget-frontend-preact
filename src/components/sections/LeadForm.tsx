@@ -63,7 +63,7 @@ export const LeadForm = () => {
           <div className={`phone-input ${phoneField.errorText ? 'error' : ''}`}>
             <img src={phoneImg} alt='phone' />
             <input
-              placeholder='+7 (922) 557-42-47'
+              placeholder='+7 (922) 555-55-55'
               type='tel'
               value={phoneField.value}
               onChange={e => handleInput(phoneField, e)}

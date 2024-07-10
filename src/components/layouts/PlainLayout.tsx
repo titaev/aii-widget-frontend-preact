@@ -13,8 +13,8 @@ export const PlainLayout = () => {
   const ref = useIncrementViewCount();
   useSetFont();
   useEffect(() => {
-    leadFormOpening();
-    // gratitudeOpening();
+    // leadFormOpening();
+    gratitudeOpening();
   }, []);
 
   return (
