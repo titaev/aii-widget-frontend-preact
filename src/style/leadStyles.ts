@@ -8,6 +8,9 @@ p {
 .flex {
     display: flex;
 }
+.flex-wrap {
+    flex-wrap: wrap;
+}
 .gap-2 {
     gap: 16px;
 }
@@ -15,10 +18,9 @@ p {
     justify-content: space-between;
 }
 .modal-lead {
+    width: 100%;
     position: relative;
     z-index: 10000;
-    width: 100%;
-    max-width: 700px;
     height: 784px;
     background: #ffffff;
     box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.12);
@@ -30,10 +32,14 @@ p {
     flex-direction: column;
     align-items: flex-end;
     gap: 50px;
+    align-items: flex-start;
+    height: 100%;
 }
-@media screen and (max-width: 760px) {
+@media screen and (max-width: 920px) {
   .modal-lead {
-    margin-inline: 20px;
+    width: 80vw;
+    gap: 20px;
+    padding: 36px;
   }
 }
 .modal-lead .close {
@@ -48,21 +54,34 @@ p {
 }
 .modal-lead .bg-image {
     width: 100%;
-    max-width: 600px;
+    min-height: 280px;
     height: 280px;
     background: #0484ac;
     border-radius: 8px;
 }
-@media screen and (max-width: 840px) {
+@media screen and (max-width: 920px) {
   .modal-lead .close {
-    display: none;
+    right: -30px;
   }
 }
-
+@media screen and (max-width: 520px) {
+  .modal-lead .close {
+    right: -26px;
+  }
+}
 .modal-lead .fg-image {
-    position: absolute;
-    left: 40px;
-    top: -64px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translate(40px, -64px);
+  width: 100%;
+  min-height: 394px;
+  height: 394px;
+}
+@media screen and (max-width: 920px) {
+  .modal-lead .fg-image {
+    transform: translate(20px, -78px);
+  }
 }
 .modal-lead .content {
     display: flex;
@@ -87,6 +106,7 @@ p {
 .modal-lead .email-input,
 .modal-lead .phone-input {
     flex: 1;
+    min-width: 300px;
 }
 .modal-lead .name-input > input,
 .modal-lead .email-input > input,
@@ -126,15 +146,19 @@ p {
 .modal-lead .btns {
     display: flex;
     flex-direction: row;
-    align-items: center;
     padding: 0px;
-    gap: 70px;
+    column-gap: 70px;
+    row-gap: 20px;
+    justify-content: space-between;
+    width: 100%;
+    flex-wrap: wrap;
 }
 .modal-lead .btn {
     text-align: center;
     padding: 8px 20px;
     height: 46px;
-    width: 347px;
+    flex: 2 1 347px;
+    min-width: fit-content;
     background: #f18225;
     box-shadow: 0px 5px 0px #b56521;
     border-radius: 50px;
@@ -142,7 +166,6 @@ p {
     font-size: 24px;
     line-height: 33px;
     color: #ffffff;
-    margin-inline: auto;
     border: 0;
     cursor: pointer;
 }
@@ -152,7 +175,9 @@ p {
     flex-direction: row;
     align-items: center;
     padding: 14px 23px;
-    width: 183px;
+    height: 46px;
+    flex: 1 1 183px;
+    min-width: fit-content;
     border: 1.46882px solid rgba(4, 132, 172, 0.5);
     border-radius: 50px;
     color: #0484ac;

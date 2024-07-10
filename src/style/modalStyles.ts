@@ -22,6 +22,6 @@ padding-bottom: 60px;
     margin-top: 60px;
 }
 .${MODAL_WRAPPER_CLASS}:has(.modal-gratitude){
-    margin-top: 160px;
+    margin-top: 120px;
 }
 `;

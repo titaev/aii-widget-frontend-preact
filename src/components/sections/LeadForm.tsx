@@ -59,7 +59,7 @@ export const LeadForm = () => {
           />
         </div>
 
-        <div className='flex gap-2'>
+        <div className='flex gap-2 flex-wrap'>
           <div className={`phone-input ${phoneField.errorText ? 'error' : ''}`}>
             <img src={phoneImg} alt='phone' />
             <input
