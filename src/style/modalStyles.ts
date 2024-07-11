@@ -8,7 +8,7 @@ left: 0;
 width: 100%;
 height: 100%;
 background-color: var(--modal-overlay);
-z-index: 200;
+z-index: 99999999;
 display: flex;
 overflow: auto;
 }

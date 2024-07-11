@@ -63,6 +63,10 @@ p {
   .modal-lead .close {
     right: -30px;
   }
+  .modal-lead .bg-image {
+      min-height: 240px;
+      height: 240px;
+  }
 }
 @media screen and (max-width: 520px) {
   .modal-lead .close {
@@ -80,7 +84,9 @@ p {
 }
 @media screen and (max-width: 920px) {
   .modal-lead .fg-image {
-    transform: translate(20px, -78px);
+    min-height: 340px;
+    height: 340px;
+    transform: translate(50px, -64px);
   }
 }
 .modal-lead .content {
