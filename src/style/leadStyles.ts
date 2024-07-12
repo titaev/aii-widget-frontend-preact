@@ -1,3 +1,5 @@
+import { MODAL_WRAPPER_CLASS } from '@src/classNames';
+
 export const leadStyles = `
 * > * {
     box-sizing: border-box;
@@ -16,6 +18,14 @@ p {
 }
 .space-between {
     justify-content: space-between;
+}
+.${MODAL_WRAPPER_CLASS}:has(.modal-lead){
+    margin-top: 60px;
+}
+@media screen and (max-width: 520px) {
+  .${MODAL_WRAPPER_CLASS}:has(.modal-lead) {
+    margin-top: 0px;
+  }
 }
 .modal-lead {
     width: 100%;
@@ -44,9 +54,17 @@ p {
 }
 @media screen and (max-width: 520px) {
   .modal-lead {
-    width: 90vw;
+    width: 100%;
     gap: 16px;
     padding: 18px;
+    margin-inline: auto;
+    border-radius: 0;
+    overflow-x: hidden;
+  }
+  .${MODAL_WRAPPER_CLASS} {
+    padding: 0;
+    margin: 0;
+    height: 100%;
   }
 }  
 .modal-lead .close {
@@ -77,11 +95,11 @@ p {
 }
 @media screen and (max-width: 520px) {
   .modal-lead .close {
-    right: -20px;
+    visibility:hidden;
   }
   .modal-lead .bg-image {
-      min-height: 200px;
-      height: 200px;
+      min-height: 240px;
+      height: 240px;
   }
 }
 .modal-lead .fg-image {
@@ -95,21 +113,29 @@ p {
 }
 @media screen and (max-width: 920px) {
   .modal-lead .fg-image {
-    min-height: 340px;
-    height: 340px;
-    transform: translate(50px, -64px);
+    min-height: 310px;
+    height: 310px;
+    transform: translate(50px, -34px);
   }
 }
 @media screen and (max-width: 520px) {
   .modal-lead .fg-image {
-    min-height: 282px;
-    height: 282px;
+    margin-top: 40px;
+    min-height: 283px;
+    height: 283px;
+    transform: translate(50px, -65px);
   }
 }
 .modal-lead .content {
     display: flex;
     flex-direction: column;
     gap: 16px;
+}
+@media screen and (max-width: 520px) {
+  .modal-lead .content {
+    flex: 1;
+    justify-content: center;
+  }
 }
 .modal-lead .name-input,
 .modal-lead .email-input,
@@ -152,6 +178,12 @@ p {
   .modal-lead .text-2 {
       font-size: 24px;
       line-height: 31px;
+  }
+}
+@media screen and (max-width: 520px) {
+  .modal-lead .text-2 {
+      font-size: 28px;
+      margin-top: 18px;
   }
 }
 .modal-lead .text-2 > b {

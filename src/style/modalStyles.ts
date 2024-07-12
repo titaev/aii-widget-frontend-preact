@@ -10,6 +10,7 @@ height: 100%;
 background-color: var(--modal-overlay);
 z-index: 99999999;
 display: flex;
+flex-direction: column;
 overflow: auto;
 }
 .${MODAL_WRAPPER_CLASS}{
@@ -17,11 +18,5 @@ max-width: calc(var(--root-size) * 8);
 margin: auto;
 animation: appear 300ms 1 ease-in 0s forwards;
 padding-bottom: 60px;
-}
-.${MODAL_WRAPPER_CLASS}:has(.modal-lead){
-    margin-top: 60px;
-}
-.${MODAL_WRAPPER_CLASS}:has(.modal-gratitude){
-    margin-top: 120px;
 }
 `;

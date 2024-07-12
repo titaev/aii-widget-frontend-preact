@@ -44,11 +44,11 @@ export const LeadForm = () => {
       <img className='close' src={closeImg} alt='close' type='button' onClick={modalClosing} />
       <img className='bg-image' src={bgImg} alt='background' />
       <img className='fg-image' src={fgImg} alt='foreground' />
+      <p className='text-2'>
+        Заберите индивидуальный план от <b>нейросети </b>
+        <span>CODDY</span>!
+      </p>
       <div className='content'>
-        <p className='text-2'>
-          Заберите индивидуальный план от <b>нейросети </b>
-          <span>CODDY</span>!
-        </p>
         <div className={`name-input ${nameField.errorText ? 'error' : ''}`}>
           <img src={profileImg} alt='profile' />
           <input
