@@ -19,7 +19,7 @@ export const Gratitude = () => {
         <p className='text-2'>
           Нейросеть <b>CODDY</b> уже создает персональный план развития для вашего ребенка!
         </p>
-        <div className='btn' style='margin-top: 35px' onClick={modalClosing}>
+        <div className='btn' onClick={modalClosing}>
           OK!
         </div>
       </div>

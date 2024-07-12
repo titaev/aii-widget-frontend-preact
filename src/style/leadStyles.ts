@@ -42,6 +42,13 @@ p {
     padding: 36px;
   }
 }
+@media screen and (max-width: 520px) {
+  .modal-lead {
+    width: 90vw;
+    gap: 16px;
+    padding: 18px;
+  }
+}  
 .modal-lead .close {
     position: absolute;
     top: -50px;
@@ -70,7 +77,11 @@ p {
 }
 @media screen and (max-width: 520px) {
   .modal-lead .close {
-    right: -26px;
+    right: -20px;
+  }
+  .modal-lead .bg-image {
+      min-height: 200px;
+      height: 200px;
   }
 }
 .modal-lead .fg-image {
@@ -87,6 +98,12 @@ p {
     min-height: 340px;
     height: 340px;
     transform: translate(50px, -64px);
+  }
+}
+@media screen and (max-width: 520px) {
+  .modal-lead .fg-image {
+    min-height: 282px;
+    height: 282px;
   }
 }
 .modal-lead .content {
@@ -112,7 +129,6 @@ p {
 .modal-lead .email-input,
 .modal-lead .phone-input {
     flex: 1;
-    min-width: 300px;
 }
 .modal-lead .name-input > input,
 .modal-lead .email-input > input,
@@ -131,6 +147,12 @@ p {
     font-size: 30px;
     line-height: 41px;
     color: #333333;
+}
+@media screen and (max-width: 920px) {
+  .modal-lead .text-2 {
+      font-size: 24px;
+      line-height: 31px;
+  }
 }
 .modal-lead .text-2 > b {
     font-weight: 700;
@@ -174,6 +196,13 @@ p {
     color: #ffffff;
     border: 0;
     cursor: pointer;
+}
+  @media screen and (max-width: 360px) {
+  .modal-lead .btn {
+      font-size: 20px;
+      padding-left: 10px;
+      padding-right: 10px;
+  }
 }
 .modal-lead .btn-2 {
     display: flex;

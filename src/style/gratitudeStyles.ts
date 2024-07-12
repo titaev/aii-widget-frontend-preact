@@ -9,7 +9,6 @@ p {
     width: 100%;
     position: relative;
     z-index: 10000;
-    height: 613px;
     background: #ffffff;
     box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.12);
     border-radius: 35px;
@@ -18,6 +17,11 @@ p {
 @media screen and (max-width: 760px) {
   .modal-gratitude {
     width: 80vw;
+  }
+}
+@media screen and (max-width: 520px) {
+  .modal-gratitude {
+    width: 90vw;
   }
 }
 .modal-gratitude .close {
@@ -35,6 +39,11 @@ p {
     right: -30px;
   }
 }
+@media screen and (max-width: 520px) {
+  .modal-gratitude .close {
+    right: -20px;
+  }
+}
 .modal-gratitude .bg-image {
     position: relative;
     height: 329px;
@@ -42,6 +51,12 @@ p {
     border-top-left-radius: 35px;
     border-top-right-radius: 35px;
     width: 100%;
+}
+@media screen and (max-width: 520px) {
+  .modal-gratitude .bg-image {
+      min-height: 290px;
+      height: 290px;
+  }
 }
 .modal-gratitude .fg-image {
     position: absolute;
@@ -51,15 +66,25 @@ p {
     width: 100%;
     height: 400px;
 }
+@media screen and (max-width: 520px) {
+  .modal-gratitude .fg-image {
+      transform: translate(-30px, -50px);
+      height: 330px;
+  }
+}
 .modal-gratitude .modal-inner {
     max-width: 409px;
     width: 100%;
     margin: 50px auto;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 50px;
 }
 @media screen and (max-width: 600px) {
   .modal-gratitude .modal-inner {
     max-width: 80%;
     margin-top: 30px;
+    padding-bottom: 30px;
   }
 }
 .modal-gratitude .text-1 {
@@ -100,6 +125,8 @@ p {
     color: #ffffff;
     margin-inline: auto;
     cursor: pointer;
+    width: 100%;
+    margin-top: 32px;
 }
 @keyframes fadeIn {
   0% {
