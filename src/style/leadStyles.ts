@@ -71,11 +71,26 @@ p {
     position: absolute;
     top: -50px;
     right: -48px;
-    border-radius: 60px;
     z-index: 100;
     cursor: pointer;
     visibility:hidden;
     animation: fadeIn .3s forwards 3s;
+    background-color: white;
+    padding: 16px;
+    border-radius: 32px;
+    box-sizing: content-box;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.modal-lead .close {
+    color: #0484ac;
+    line-height: 1;
+    font-size: 26px;
+    font-weight: 500;
+    font-family: 'Inter';
 }
 .modal-lead .bg-image {
     width: 100%;
@@ -148,6 +163,11 @@ p {
     border: 1px solid #c2c2c2;
     box-shadow: 0px 1.46882px 2.93763px rgba(16, 24, 40, 0.05);
     border-radius: 11.7505px;
+    }
+.modal-lead .name-input:focus-within,
+.modal-lead .email-input:focus-within,
+.modal-lead .phone-input:focus-within {
+    border: 1px solid #0484ac;
 }
 .modal-lead .error {
     border: 1px solid #ea7e7e;

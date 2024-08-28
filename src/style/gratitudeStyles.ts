@@ -54,6 +54,22 @@ p {
     cursor: pointer;
     visibility:hidden;
     animation: fadeIn .3s forwards 3s;
+    background-color: white;
+    padding: 16px;
+    border-radius: 32px;
+    box-sizing: content-box;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.modal-gratitude .close {
+    color: #0484ac;
+    line-height: 1;
+    font-size: 26px;
+    font-weight: 500;
+    font-family: 'Inter';
 }
 @media screen and (max-width: 840px) {
   .modal-gratitude .close {

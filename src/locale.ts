@@ -10,10 +10,10 @@ const localeTexts = {
     defaultCtaText: 'Ответ ИИ будет здесь',
   },
   en: {
-    copy: 'Copy',
-    reset: 'Reset',
+    copy: 'Копировать',
+    reset: 'Сброс',
     more: 'More',
-    stop: 'Stop',
+    stop: 'Стоп',
     modelLoadErrorNotification: 'Error. Try later',
     requiredError: 'The field is required',
     incorrectEmail: 'Incorrect email',
