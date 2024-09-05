@@ -54,6 +54,7 @@ export const wsMessageGetting = async (data: string) => {
       });
     } else {
       $isShowResetBtn.value = true;
+      $isShowStopBtn.value = false;
     }
 
     if (

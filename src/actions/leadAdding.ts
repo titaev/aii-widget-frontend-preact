@@ -8,14 +8,12 @@ export const leadAdding = async () => {
   if ($isPreviewMode.value) {
     return;
   }
-  if (!$lsModel.value.leadIsCollected) {
+  if (!$lsModel.value.leadIsCollected || $model.value.collect_lead_strategy === 'email_ai_answer') {
     const leadData = {
-      email:
-        //@ts-ignore
-        $model.value.fields.leadsFields.find(item => item.fieldRef === '#email').value,
-      phone:
-        //@ts-ignore
-        $model.value.fields.leadsFields.find(item => item.fieldRef === '#phone').value,
+      //@ts-ignore
+      email: $model.value.fields.leadsFields.find(item => item.fieldRef === '#email')?.value,
+      //@ts-ignore
+      phone: $model.value.fields.leadsFields.find(item => item.fieldRef === '#phone')?.value,
       additional_lead_data: {
         leadsFields: collectPayloadDataFromFields('leadsFields'),
       },
