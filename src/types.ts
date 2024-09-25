@@ -47,6 +47,7 @@ export type ButtonField = {
 export type ModelResponse = {
   id: string;
   name: string;
+  header: string;
   fields: {
     version: string;
     aiFields: Array<TextInputFieldType | HeaderFieldType | HTMLFieldType | ImageFieldType>;
