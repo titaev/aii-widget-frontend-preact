@@ -10,10 +10,13 @@ const port = 3004;
 
 module.exports = () => {
   return {
-    entry: { myAppName: path.resolve(__dirname, './src/index.tsx') },
+    entry: {
+      v3: path.resolve(__dirname, './src/index.tsx'),
+      lib: path.resolve(__dirname, './src/index2.tsx'),
+    },
     output: {
       path: path.resolve(__dirname, './dist'),
-      filename: `aii-cx-widget-v3.${process.env.NAME_POSTFIX}.js`,
+      filename: `aii-cx-widget-[name].${process.env.NAME_POSTFIX}.js`,
       // https://ui.dev/react-router-cannot-get-url-refresh
       publicPath: production ? '' : '/',
     },
