@@ -10,18 +10,20 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 </head>
 <body>
-<div>
+<div style="display:none;">
     <button class="model">Model</button>
     <button class="lead">Show lead form</button>
     <button class="gratitude">Show gratitude</button>
 </div>
+<!--<div id="root"></div>-->
 <div style="overflow: auto; width: 1300px; height: 400px; margin: 0 auto;">
     <div
             class="aii-cx-widget-root"
             data-id="32267a10-a11f-475d-94f1-f4b73ff3ecd8"
     ></div>
 </div>
-<script>
+<!--<div id="secondRoot" style="overflow: auto; width: 1300px; height: 400px; margin: 0 auto;"></div>-->
+<script defer>
     const modelData = {
         "id": "32267a10-a11f-475d-94f1-f4b73ff3ecd8",
         "name": "a",
@@ -179,6 +181,16 @@
             composed: true
         }))
     }
+    // setTimeout(() => {
+    //     const secondRoot = document.querySelector('#secondRoot')
+    //     console.log({AiiCxWidget: window.AiiCxWidget})
+    //     new AiiCxWidget().mount({
+    //         id: '32267a10-a11f-475d-94f1-f4b73ff3ecd8',
+    //         node: secondRoot
+    //     })
+    // }, 1000)
+
+
 </script>
 </body>
 </html>

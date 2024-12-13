@@ -10,3 +10,5 @@ rootNodes.forEach(node => {
     node.shadowRoot,
   );
 });
+
+//render(<MODULE_TEST_APP />, document.querySelector('#root'));

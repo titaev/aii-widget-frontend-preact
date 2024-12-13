@@ -1,6 +1,8 @@
 node_modules
 dist
+module
 build
+MODULE_TEST_APP.tsx
 .husky
 .env
 .idea
