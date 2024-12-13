@@ -12,7 +12,6 @@ module.exports = () => {
   return {
     entry: {
       v3: path.resolve(__dirname, './src/index.tsx'),
-      lib: path.resolve(__dirname, './src/index2.tsx'),
     },
     output: {
       path: path.resolve(__dirname, './dist'),

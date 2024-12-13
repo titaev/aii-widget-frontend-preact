@@ -9,7 +9,9 @@
     "build:prod": "cross-env NAME_POSTFIX=prod NODE_ENV=production BUILD_MODE=prod APP_URL=https://aii.cx/app REACT_APP_BE_API_URL=https://admin-backend.aii.cx/api/v1 REACT_APP_FORM_SOCKET_URL=wss://chat-backend.aii.cx/chat/v2/lead_form webpack --config webpack.config.js",
     "build:dev": "cross-env NAME_POSTFIX=dev NODE_ENV=production BUILD_MODE=dev APP_URL=https://dev.aii.cx/app REACT_APP_BE_API_URL=https://dev-admin-backend.aii.cx/api/v1 REACT_APP_FORM_SOCKET_URL=wss://dev-chat-backend.aii.cx/chat/v2/lead_form webpack --config webpack.config.js",
     "lint": "eslint ./src --ext js,jsx,ts,tsx",
-    "lint:fix": "eslint --fix ./src --ext js,jsx,ts,tsx"
+    "lint:fix": "eslint --fix ./src --ext js,jsx,ts,tsx",
+    "build:module-prod": "cross-env NAME_POSTFIX=prod APP_URL=https://aii.cx/app REACT_APP_BE_API_URL=https://admin-backend.aii.cx/api/v1 REACT_APP_FORM_SOCKET_URL=wss://chat-backend.aii.cx/chat/v2/lead_form node es-build-module.js",
+    "build:module-dev": "cross-env NAME_POSTFIX=dev APP_URL=https://dev.aii.cx/app REACT_APP_BE_API_URL=https://dev-admin-backend.aii.cx/api/v1 REACT_APP_FORM_SOCKET_URL=wss://dev-chat-backend.aii.cx/chat/v2/lead_form node es-build-module.js"
   },
   "keywords": [],
   "author": "",
@@ -31,6 +33,7 @@
     "cross-env": "^7.0.3",
     "css-loader": "^6.5.1",
     "dotenv": "^16.0.1",
+    "esbuild": "^0.24.0",
     "eslint": "^8.18.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-prettier": "^9.1.0",
