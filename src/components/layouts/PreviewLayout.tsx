@@ -40,7 +40,9 @@ export const PreviewLayout = ({ widgetId }: { widgetId: string }) => {
   if (mode === 'leadForm') {
     return (
       <MainLayout>
-        <LeadForm />
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
+          <LeadForm />
+        </div>
       </MainLayout>
     );
   }
